@@ -7,3 +7,4 @@ Fork of http://mwasiluk.github.io/angular-surveys
 You can install this package through `Bower` :
 
     bower install insight-surveys --save
+	 
