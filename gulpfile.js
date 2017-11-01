@@ -14,7 +14,7 @@ gulp.task('build-css', ['clean'], function () {
     return gulp.src('./styles/*')
         .pipe(plugins.plumber({ errorHandler: onError }))
         .pipe(plugins.sass())
-        .pipe(plugins.minifyCss())
+        .pipe(plugins.cleanCss())
         .pipe(plugins.rename({
             extname: '.min.css'
         }))
@@ -122,7 +122,7 @@ var browserSyncInit = function(baseDir){
             }
         },
         port: 8080,
-        open: 'local',
+        open: false,
         browser: "google chrome"
     });
 };
