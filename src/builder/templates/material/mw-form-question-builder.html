@@ -12,7 +12,7 @@
                     <md-input-container flex-gt-md="30">
                         <mw-label label-for="question-type-{{ctrl.id}}" label-class="col-sm-2 control-label"  label-key="mwForm.question.type"></mw-label>
                         <md-select ng-attr-id="question-type-{{ctrl.id}}" ng-model="ctrl.question.type" ng-change="ctrl.questionTypeChanged()" required>
-                            <md-option ng-repeat="type in ctrl.questionTypes" ng-value="type">
+                            <md-option ng-repeat="type in ctrl.questionTypes track by $index" ng-value="type">
                                 {{'mwForm.question.types.'+type+'.name'|translate}}
                             </md-option>
                         </md-select>
@@ -25,7 +25,7 @@
 
                     </div>
                 </div>
-                <div class="form-group mw-question-type" ng-repeat="select in ctrl.options.customQuestionSelects">
+                <div class="form-group mw-question-type" ng-repeat="select in ctrl.options.customQuestionSelects track by select.key">
                     <mw-label label-for="question-{{select.key}}-{{ctrl.id}}" label-class="col-sm-2 control-label"  label-key="{{select.label}}"></mw-label>
                     <div class="col-sm-10 form-inline">
                         <select ng-attr-id="question-{{opt.key}}-{{ctrl.id}}" ng-options="opt.label for opt in select.options track by opt.key" ng-model="ctrl.question[select.key]"  class="form-control" ng-required="select.required"></select>
@@ -185,7 +185,7 @@
                 </div>
                 <div ng-switch-when="radio">
                     <md-radio-group disabled>
-                        <md-radio-button  ng-repeat="answer in ctrl.question.offeredAnswers" aria-label="{{ answer.value }}">
+                        <md-radio-button  ng-repeat="answer in ctrl.question.offeredAnswers track by answer.id" aria-label="{{ answer.value }}">
                             {{answer.value}}
                         </md-radio-button>
                         <div layout="row" layout-align="start center" class="mw-question-other-answer"  ng-if="ctrl.question.otherAnswer">
@@ -206,7 +206,7 @@
                     </md-radio-group>
                 </div>
                 <div ng-switch-when="checkbox">
-                    <div ng-repeat="answer in ctrl.question.offeredAnswers">
+                    <div ng-repeat="answer in ctrl.question.offeredAnswers track by answer.id">
                         <md-checkbox disabled>
                             {{answer.value}}
                         </md-checkbox>
@@ -231,7 +231,7 @@
                 <div ng-switch-when="select">
                     <md-input-container >
                         <md-select ng-disabled="true" ng-model="ctrl.selectAnswerMock">
-                            <md-option ng-repeat="answer in ctrl.question.offeredAnswers" ng-value="answer.id">
+                            <md-option ng-repeat="answer in ctrl.question.offeredAnswers track by answer.id" ng-value="answer.id">
                                 {{answer.value}}
                             </md-option>
                         </md-select>
@@ -243,18 +243,18 @@
                             <thead>
                             <tr>
                                 <td></td>
-                                <td ng-repeat="col in ctrl.question.grid.cols">
+                                <td ng-repeat="col in ctrl.question.grid.cols track by col.id">
                                     <label>{{col.label}}</label>
                                 </td>
                             </tr>
 
                             </thead>
                             <tbody>
-                            <tr ng-repeat="row in ctrl.question.grid.rows">
+                            <tr ng-repeat="row in ctrl.question.grid.rows track by row.id">
                                 <td>
                                     {{row.label}}
                                 </td>
-                                <td ng-repeat="col in ctrl.question.grid.cols" ng-switch="ctrl.question.grid.cellInputType">
+                                <td ng-repeat="col in ctrl.question.grid.cols track by col.id" ng-switch="ctrl.question.grid.cellInputType">
                                     <md-radio-group ng-switch-when="radio">
                                         <md-radio-button></md-radio-button>
                                     </md-radio-group>
@@ -287,7 +287,7 @@
                             </td>
 
                             <td class="mw-available-items">
-                                <div class="mw-item" ng-repeat="item in ctrl.question.priorityList">
+                                <div class="mw-item" ng-repeat="item in ctrl.question.priorityList track by item.id">
                                     {{::item.value}}
                                 </div>
                             </td>
@@ -296,7 +296,7 @@
                     </table>
                 </div>
                 <div ng-switch-when="division" class="mw-division-list" >
-                    <div class="form-inline" style="margin-bottom: 5px" ng-repeat="item in ctrl.question.divisionList">
+                    <div class="form-inline" style="margin-bottom: 5px" ng-repeat="item in ctrl.question.divisionList track by item.id">
                         <div class="form-group">
                             <label>
                                 {{item.value}}

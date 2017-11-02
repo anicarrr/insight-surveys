@@ -1,6 +1,6 @@
 <div class="question-offered-answer-list-builder">
     <div class="question-offered-answer-list" ng-sortable="ctrl.offeredAnswersSortableConfig" ng-model="ctrl.question.offeredAnswers" role="list">
-        <div class="mw-question-offered-answer" ng-repeat="answer in ctrl.question.offeredAnswers" role="listitem">
+        <div class="mw-question-offered-answer" ng-repeat="answer in ctrl.question.offeredAnswers track by answer.id" role="listitem">
             <div class="drag-handle">
                  <i class="fa fa-arrows-v fa-lg handle-inner"></i>
             </div>
@@ -21,7 +21,7 @@
             <span ng-if="ctrl.question.pageFlowModifier" class="form-inline">
                   <md-input-container >
                      <md-select ng-model="answer.pageFlow">
-                       <md-option ng-value="pageFlow" ng-repeat="pageFlow in ctrl.possiblePageFlow">{{ pageFlow.label|translate:pageFlow }}</md-option>
+                       <md-option ng-value="pageFlow" ng-repeat="pageFlow in ctrl.possiblePageFlow track by $index">{{ pageFlow.label|translate:pageFlow }}</md-option>
                      </md-select>
                  </md-input-container>
             </span>

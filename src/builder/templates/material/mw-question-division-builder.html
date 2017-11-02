@@ -19,7 +19,7 @@
 
     <div>
         <div class="question-division-list" ng-sortable="ctrl.itemsSortableConfig" ng-model="ctrl.question.divisionList" role="list">
-            <div class="mw-question-division-list-item" ng-repeat="item in ctrl.question.divisionList" role="listitem">
+            <div class="mw-question-division-list-item" ng-repeat="item in ctrl.question.divisionList track by item.id" role="listitem">
                 <div class="drag-handle">
                     <i class="fa fa-arrows-v fa-lg handle-inner"></i>
                 </div>

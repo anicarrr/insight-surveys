@@ -6,7 +6,7 @@
                 <button type="button" ng-click="ctrl.callback($event,button)"
                         ng-attr-title="{{button.title | translate}}" ng-class="button.cssClass" class="edit-button"
                         aria-label="{{button.title | translate}}"  aria-hidden="false" ng-if="ctrl.filter(button)"
-                        ng-repeat="button in ctrl.options.elementButtons"
+                        ng-repeat="button in ctrl.options.elementButtons track by $index"
                 >
                     <md-tooltip md-direction="top"><span>{{button.title | translate}}</span></md-tooltip>
                     <i class="{{button.icon}}"></i> {{button.text}}
