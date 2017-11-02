@@ -115,6 +115,7 @@ var onError = function (err) {
 
 var browserSyncInit = function(baseDir){
     browserSync.init({
+        ghostMode: false,
         server: {
             baseDir: baseDir,
             index: "demo.html",
