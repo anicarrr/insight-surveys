@@ -9,7 +9,6 @@ angular.module('mwFormViewer')
         scope: {
             question: '=',
             questionResponse: '=',
-            readOnly: '=?',
             options: '=?'
         },
         templateUrl: 'mw-priority-list.html',
@@ -46,7 +45,7 @@ angular.module('mwFormViewer')
                 ctrl.allItemsOrdered=ctrl.availableItems.length==0 ? true : null;
 
                 var baseConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged"
 //                tolerance: 'pointer',
 //                items: 'div',

@@ -1,7 +1,7 @@
 <div class="question-offered-answer-list-builder">
     <div class="question-offered-answer-list" ng-sortable="ctrl.offeredAnswersSortableConfig" ng-model="ctrl.question.offeredAnswers" role="list">
         <div class="mw-question-offered-answer" ng-repeat="answer in ctrl.question.offeredAnswers" role="listitem">
-            <div class="drag-handle" ng-if="!ctrl.readOnly">
+            <div class="drag-handle">
                  <i class="fa fa-arrows-v fa-lg handle-inner"></i>
             </div>
             <div class="option-type-indicator">
@@ -9,9 +9,9 @@
                 <i ng-if="ctrl.question.type=='checkbox'" class="fa fa-square-o fa-fw"></i>
             </div>
             <md-input-container>
-                <input wd-focus-me="ctrl.isNewAnswer[answer.id]" type="text" ng-model="answer.value" ng-keypress="ctrl.keyPressedOnInput($event,answer)" required class="form-control offered-answer-value " ng-readonly="ctrl.readOnly">
+                <input wd-focus-me="ctrl.isNewAnswer[answer.id]" type="text" ng-model="answer.value" ng-keypress="ctrl.keyPressedOnInput($event,answer)" required class="form-control offered-answer-value ">
             </md-input-container>
-            <md-button role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeOfferedAnswer(answer)" ng-if="!ctrl.readOnly"
+            <md-button role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeOfferedAnswer(answer)" 
                     ng-attr-title="{{'mwForm.buttons.remove' | translate}}">
                 <md-tooltip md-direction="top">
                     {{'mwForm.buttons.remove' | translate}}
@@ -20,7 +20,7 @@
             </md-button>
             <span ng-if="ctrl.question.pageFlowModifier" class="form-inline">
                   <md-input-container >
-                     <md-select ng-model="answer.pageFlow" ng-disabled="ctrl.readOnly">
+                     <md-select ng-model="answer.pageFlow">
                        <md-option ng-value="pageFlow" ng-repeat="pageFlow in ctrl.possiblePageFlow">{{ pageFlow.label|translate:pageFlow }}</md-option>
                      </md-select>
                  </md-input-container>
@@ -29,7 +29,7 @@
         </div>
 
     </div>
-    <div class="mw-question-offered-answer add-new-answer-widget" ng-if="!ctrl.readOnly">
+    <div class="mw-question-offered-answer add-new-answer-widget">
         <div class="drag-handle">
         </div>
         <div class="option-type-indicator">
@@ -47,7 +47,7 @@
         </span>
     </div>
     <div class="mw-question-offered-answer custom-answer" ng-if="ctrl.question.otherAnswer">
-        <div class="drag-handle"  ng-if="!ctrl.readOnly">
+        <div class="drag-handle" >
 
         </div>
         <div class="option-type-indicator">
@@ -58,8 +58,7 @@
         <md-input-container>
             <input  type="text" value="{{'mwForm.question.userAnswer'|translate}}"  class="form-control offered-answer-value " readonly>
         </md-input-container>
-        <md-button type="button" role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeCustomAnswer()" ng-if="!ctrl.readOnly"
-                ng-attr-title="{{'mwForm.buttons.remove' | translate}}">
+        <md-button type="button" role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeCustomAnswer()"                 ng-attr-title="{{'mwForm.buttons.remove' | translate}}">
             <md-tooltip md-direction="top">
                 {{'mwForm.buttons.remove' | translate}}
             </md-tooltip>

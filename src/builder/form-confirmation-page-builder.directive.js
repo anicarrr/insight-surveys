@@ -5,7 +5,6 @@ angular.module('mwFormBuilder').directive('mwFormConfirmationPageBuilder', funct
         restrict: 'AE',
         scope: {
             formObject: '=',
-            readOnly: '=?',
             defaultMessage: '=?'
         },
         templateUrl: 'mw-form-confirmation-page-builder.html',

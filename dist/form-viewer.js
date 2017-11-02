@@ -13,7 +13,6 @@ angular.module('mwFormViewer')
         scope: {
             question: '=',
             questionResponse: '=',
-            readOnly: '=?',
             options: '=?'
         },
         templateUrl: 'mw-priority-list.html',
@@ -50,7 +49,7 @@ angular.module('mwFormViewer')
                 ctrl.allItemsOrdered=ctrl.availableItems.length==0 ? true : null;
 
                 var baseConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged"
 //                tolerance: 'pointer',
 //                items: 'div',
@@ -123,7 +122,6 @@ angular.module('mwFormViewer').directive('mwFormViewer', ["$rootScope", function
             formData: '=',
             responseData: '=',
             templateData: '=?',
-            readOnly: '=?',
             options: '=?',
             formStatus: '=?', //wrapper for internal angular form object
             onSubmit: '&',
@@ -421,7 +419,6 @@ angular.module('mwFormViewer').factory("FormQuestionId", function(){
         scope: {
             question: '=',
             questionResponse: '=',
-            readOnly: '=?',
             options: '=?',
             onResponseChanged: '&?'
         },
@@ -556,8 +553,7 @@ angular.module('mwFormViewer')
         require: '^mwFormViewer',
         scope: {
             submitStatus: '=',
-            confirmationMessage: '=',
-            readOnly: '=?'
+            confirmationMessage: '='
         },
         templateUrl: 'mw-form-confirmation-page.html',
         controllerAs: 'ctrl',

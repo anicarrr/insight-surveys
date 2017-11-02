@@ -15,7 +15,6 @@ angular.module('app', ['ngMaterial', 'mwFormBuilder', 'mwFormViewer', 'mwFormUti
         ctrl.cgetResponseSheetRow = false;
         ctrl.cgetResponseSheet = false;
         ctrl.headersWithQuestionNumber = true;
-        ctrl.builderReadOnly = false;
         ctrl.viewerReadOnly = false;
         ctrl.languages = ['en', 'pl', "es", 'ru'];
         ctrl.formData = null;

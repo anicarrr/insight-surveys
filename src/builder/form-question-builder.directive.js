@@ -18,8 +18,7 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
             question: '=',
             formObject: '=',
             onReady: '&',
-            isPreview: '=?',
-            readOnly: '=?'
+            isPreview: '=?'
         },
         templateUrl: 'mw-form-question-builder.html',
         controllerAs: 'ctrl',
@@ -38,7 +37,7 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
                 sortAnswersByOrderNo();
 
                 ctrl.offeredAnswersSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {

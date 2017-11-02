@@ -3,15 +3,14 @@
 
 
         <div class="mw-question-priority-list-item" ng-repeat="item in ctrl.question.priorityList" role="listitem">
-            <div class="drag-handle" ng-if="!ctrl.readOnly">
+            <div class="drag-handle">
                 <i class="fa fa-arrows-v fa-lg handle-inner"></i>
             </div>
 
             <md-input-container>
-                <input wd-focus-me="ctrl.isNewItem[item.id]" type="text" ng-model="item.value" ng-keypress="ctrl.keyPressedOnInput($event,item)" required class="form-control item-value "
-                       ng-readonly="ctrl.readOnly">
+                <input wd-focus-me="ctrl.isNewItem[item.id]" type="text" ng-model="item.value" ng-keypress="ctrl.keyPressedOnInput($event,item)" required class="form-control item-value " >
             </md-input-container>
-            <md-button role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeItem(item)" ng-if="!ctrl.readOnly"
+            <md-button role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeItem(item)" 
                        ng-attr-title="{{'mwForm.buttons.remove' | translate}}">
                 <md-tooltip md-direction="top">
                     {{'mwForm.buttons.remove' | translate}}

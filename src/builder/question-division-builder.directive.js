@@ -7,7 +7,6 @@ angular.module('mwFormBuilder').directive('mwQuestionDivisionBuilder', function 
         require: '^mwFormQuestionBuilder',
         scope: {
             question: '=',
-            readOnly: '=?',
             options: '=?'
         },
         templateUrl: 'mw-question-division-builder.html',
@@ -26,7 +25,7 @@ angular.module('mwFormBuilder').directive('mwQuestionDivisionBuilder', function 
                 sortByOrderNo(ctrl.question.divisionList);
 
                 ctrl.itemsSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {

@@ -8,7 +8,6 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
         scope: {
             question: '=',
             formObject: '=',
-            readOnly: '=?',
             options: '=?'
         },
         templateUrl: 'mw-question-grid-builder.html',
@@ -43,7 +42,7 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
                 sortByOrderNo(ctrl.question.grid.cols);
 
                 ctrl.rowsSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {
@@ -51,7 +50,7 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
                     }
                 };
                 ctrl.colsSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {

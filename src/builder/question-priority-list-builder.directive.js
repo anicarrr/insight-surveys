@@ -7,7 +7,6 @@ angular.module('mwFormBuilder').directive('mwQuestionPriorityListBuilder', funct
         require: '^mwFormQuestionBuilder',
         scope: {
             question: '=',
-            readOnly: '=?',
             options: '=?'
         },
         templateUrl: 'mw-question-priority-list-builder.html',
@@ -28,7 +27,7 @@ angular.module('mwFormBuilder').directive('mwQuestionPriorityListBuilder', funct
                 sortByOrderNo(ctrl.question.priorityList);
 
                 ctrl.itemsSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {

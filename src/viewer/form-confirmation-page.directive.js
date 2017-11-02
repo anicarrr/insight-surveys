@@ -8,8 +8,7 @@ angular.module('mwFormViewer')
         require: '^mwFormViewer',
         scope: {
             submitStatus: '=',
-            confirmationMessage: '=',
-            readOnly: '=?'
+            confirmationMessage: '='
         },
         templateUrl: 'mw-form-confirmation-page.html',
         controllerAs: 'ctrl',

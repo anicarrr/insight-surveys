@@ -18,8 +18,7 @@ angular.module('mwFormBuilder').factory("FormParagraphBuilderId", function(){
             paragraph: '=',
             formObject: '=',
             onReady: '&',
-            isPreview: '=?',
-            readOnly: '=?'
+            isPreview: '=?'
         },
         templateUrl: 'mw-form-paragraph-builder.html',
         controllerAs: 'ctrl',

@@ -8,7 +8,6 @@ angular.module('mwFormBuilder').directive('mwQuestionOfferedAnswerListBuilder', 
         scope: {
             question: '=',
             formObject: '=',
-            readOnly: '=?',
             options: '=?',
             disableOtherAnswer: '=?'
         },
@@ -31,7 +30,7 @@ angular.module('mwFormBuilder').directive('mwQuestionOfferedAnswerListBuilder', 
                 sortAnswersByOrderNo();
 
                 ctrl.offeredAnswersSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {

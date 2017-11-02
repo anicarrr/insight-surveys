@@ -5,20 +5,20 @@
 
                     <md-input-container class="md-block">
                         <mw-label label-for="question-text-{{ctrl.id}}" label-key="mwForm.question.text"></mw-label>
-                        <input type="text" name="text" ng-attr-id="question-text-{{ctrl.id}}" ng-model="ctrl.question.text" ng-readonly="ctrl.readOnly" required>
+                        <input type="text" name="text" ng-attr-id="question-text-{{ctrl.id}}" ng-model="ctrl.question.text" required>
                     </md-input-container>
 
                 <div class="mw-question-type" layout="row" layout-align="start center">
                     <md-input-container flex-gt-md="30">
                         <mw-label label-for="question-type-{{ctrl.id}}" label-class="col-sm-2 control-label"  label-key="mwForm.question.type"></mw-label>
-                        <md-select ng-attr-id="question-type-{{ctrl.id}}" ng-model="ctrl.question.type" ng-change="ctrl.questionTypeChanged()" ng-disabled="ctrl.readOnly" required>
+                        <md-select ng-attr-id="question-type-{{ctrl.id}}" ng-model="ctrl.question.type" ng-change="ctrl.questionTypeChanged()" required>
                             <md-option ng-repeat="type in ctrl.questionTypes" ng-value="type">
                                 {{'mwForm.question.types.'+type+'.name'|translate}}
                             </md-option>
                         </md-select>
                     </md-input-container>
                     <div flex flex-offset-gt-md="5">
-                        <md-checkbox  ng-if="ctrl.question.type=='radio' || ctrl.question.type=='select'" ng-model="ctrl.question.pageFlowModifier" ng-change="ctrl.pageFlowModifierChanged()" ng-readonly="ctrl.readOnly" aria-label="Go to page">
+                        <md-checkbox  ng-if="ctrl.question.type=='radio' || ctrl.question.type=='select'" ng-model="ctrl.question.pageFlowModifier" ng-change="ctrl.pageFlowModifierChanged()" aria-label="Go to page">
                             <span translate="mwForm.pageFlow.afterQuestionAnswer">Przejdź do strony w oparciu o odpowiedź</span>
                         </md-checkbox>
 
@@ -28,7 +28,7 @@
                 <div class="form-group mw-question-type" ng-repeat="select in ctrl.options.customQuestionSelects">
                     <mw-label label-for="question-{{select.key}}-{{ctrl.id}}" label-class="col-sm-2 control-label"  label-key="{{select.label}}"></mw-label>
                     <div class="col-sm-10 form-inline">
-                        <select ng-attr-id="question-{{opt.key}}-{{ctrl.id}}" ng-options="opt.label for opt in select.options track by opt.key" ng-model="ctrl.question[select.key]"  class="form-control" ng-disabled="ctrl.readOnly" ng-required="select.required"></select>
+                        <select ng-attr-id="question-{{opt.key}}-{{ctrl.id}}" ng-options="opt.label for opt in select.options track by opt.key" ng-model="ctrl.question[select.key]"  class="form-control" ng-required="select.required"></select>
 
                     </div>
                 </div>
@@ -47,21 +47,21 @@
                         </md-input-container>
                     </div>
                     <div ng-switch-when="radio">
-                        <mw-question-offered-answer-list-builder question="ctrl.question" form-object="ctrl.formObject" read-only="ctrl.readOnly"></mw-question-offered-answer-list-builder>
+                        <mw-question-offered-answer-list-builder question="ctrl.question" form-object="ctrl.formObject"></mw-question-offered-answer-list-builder>
                     </div>
                     <div ng-switch-when="select">
-                        <mw-question-offered-answer-list-builder question="ctrl.question" form-object="ctrl.formObject" read-only="ctrl.readOnly" disable-other-answer="true"></mw-question-offered-answer-list-builder>
+                        <mw-question-offered-answer-list-builder question="ctrl.question" form-object="ctrl.formObject" disable-other-answer="true"></mw-question-offered-answer-list-builder>
                     </div>
                     <div ng-switch-when="checkbox">
-                        <mw-question-offered-answer-list-builder question="ctrl.question" form-object="ctrl.formObject" read-only="ctrl.readOnly"></mw-question-offered-answer-list-builder>
+                        <mw-question-offered-answer-list-builder question="ctrl.question" form-object="ctrl.formObject"></mw-question-offered-answer-list-builder>
                     </div>
                     <div ng-switch-when="priority">
-                        <mw-question-priority-list-builder question="ctrl.question" read-only="ctrl.readOnly"></mw-question-priority-list-builder>
+                        <mw-question-priority-list-builder question="ctrl.question"></mw-question-priority-list-builder>
                     </div>
                     <div ng-switch-when="number" class="form-inline">
                         <div class="range-config form-inline">
-                            <md-input-container><mw-label label-for="question-number-range-min-{{ctrl.id}}" label-key="mwForm.question.number.min"></mw-label><input ng-attr-id="question-number-range-min-{{ctrl.id}}" class="form-control" type="number" ng-model="ctrl.question.min" max="{{ctrl.question.max}}" ng-readonly="ctrl.readOnly"/></md-input-container>
-                            <md-input-container><mw-label label-for="question-number-range-max-{{ctrl.id}}" label-key="mwForm.question.number.max"></mw-label><input ng-attr-id="question-number-range-max-{{ctrl.id}}" class="form-control" type="number" min="{{ctrl.question.min}}" ng-model="ctrl.question.max" ng-readonly="ctrl.readOnly"/></md-input-container>
+                            <md-input-container><mw-label label-for="question-number-range-min-{{ctrl.id}}" label-key="mwForm.question.number.min"></mw-label><input ng-attr-id="question-number-range-min-{{ctrl.id}}" class="form-control" type="number" ng-model="ctrl.question.min" max="{{ctrl.question.max}}" /></md-input-container>
+                            <md-input-container><mw-label label-for="question-number-range-max-{{ctrl.id}}" label-key="mwForm.question.number.max"></mw-label><input ng-attr-id="question-number-range-max-{{ctrl.id}}" class="form-control" type="number" min="{{ctrl.question.min}}" ng-model="ctrl.question.max" /></md-input-container>
                         </div>
                         <br/>
                         <md-input-container>
@@ -90,8 +90,8 @@
                     </div>
                     <div ng-switch-when="range" >
                         <div class="range-config form-inline">
-                            <md-input-container><mw-label label-for="question-range-from-{{ctrl.id}}" label-key="mwForm.question.range.from"></mw-label><input ng-attr-id="question-range-from-{{ctrl.id}}" type="number" ng-model="ctrl.question.min" max="{{ctrl.question.max}}" ng-readonly="ctrl.readOnly"/></md-input-container>
-                            <md-input-container><mw-label label-for="question-range-to-{{ctrl.id}}" label-key="mwForm.question.range.to"></mw-label><input ng-attr-id="question-range-to-{{ctrl.id}}"  type="number" min="{{ctrl.question.min}}" ng-model="ctrl.question.max" ng-readonly="ctrl.readOnly"/></md-input-container>
+                            <md-input-container><mw-label label-for="question-range-from-{{ctrl.id}}" label-key="mwForm.question.range.from"></mw-label><input ng-attr-id="question-range-from-{{ctrl.id}}" type="number" ng-model="ctrl.question.min" max="{{ctrl.question.max}}" /></md-input-container>
+                            <md-input-container><mw-label label-for="question-range-to-{{ctrl.id}}" label-key="mwForm.question.range.to"></mw-label><input ng-attr-id="question-range-to-{{ctrl.id}}"  type="number" min="{{ctrl.question.min}}" ng-model="ctrl.question.max" /></md-input-container>
                         </div>
                         <br/>
                         <div class="mw-range">
@@ -107,15 +107,15 @@
                         <div class="range-config form-inline">
                             <span translate="mwForm.question.star.no">Number of stars</span>
                             <input class="form-control" type="number" ng-model="ctrl.question.noStars"
-                                min="3" max="10" step="1" required ng-readonly="ctrl.readOnly" ng-init="ctrl.question.noStars = ctrl.question.noStars || 5"/>
+                                min="3" max="10" step="1" required  ng-init="ctrl.question.noStars = ctrl.question.noStars || 5"/>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12" ng-if="ctrl.question.type=='grid'">
-                    <mw-question-grid-builder question="ctrl.question" read-only="ctrl.readOnly"></mw-question-grid-builder>
+                    <mw-question-grid-builder question="ctrl.question"></mw-question-grid-builder>
                 </div>
                 <div class="col-sm-12" ng-if="ctrl.question.type=='division'">
-                    <mw-question-division-builder question="ctrl.question" read-only="ctrl.readOnly"></mw-question-division-builder>
+                    <mw-question-division-builder question="ctrl.question"></mw-question-division-builder>
                 </div>
             </div>
 
@@ -127,7 +127,7 @@
                     </md-button>
                 </div>
                 <div flex>
-                    <md-checkbox  ng-model="ctrl.question.required" ng-disabled="ctrl.readOnly" flex>
+                    <md-checkbox  ng-model="ctrl.question.required" flex>
                         <span translate="mwForm.question.required">Required</span>
                     </md-checkbox>
                 </div>

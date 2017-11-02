@@ -9,8 +9,7 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
             formPage: '=',
             formObject: '=',
             isFirst: '=',
-            isLast: '=',
-            readOnly: '=?'
+            isLast: '='
         },
         templateUrl: 'mw-form-page-builder.html',
         controllerAs: 'ctrl',
@@ -26,7 +25,7 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
                 sortElementsByOrderNo();
 
                 ctrl.sortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     group: "survey",
                     handle: ".inactive",

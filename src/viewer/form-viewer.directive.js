@@ -8,7 +8,6 @@ angular.module('mwFormViewer').directive('mwFormViewer', function ($rootScope) {
             formData: '=',
             responseData: '=',
             templateData: '=?',
-            readOnly: '=?',
             options: '=?',
             formStatus: '=?', //wrapper for internal angular form object
             onSubmit: '&',

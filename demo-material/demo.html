@@ -53,19 +53,7 @@
             <md-content class="md-padding tab-content">
                 <div layout="row" layout-align="center" ng-if="ctrl.selectedTabIndex===0">
                     <div flex-gt-sm="66" flex-sm="90" >
-                        <div layout="row" layout-align="center">
-                            <div>
-                                <md-button class="md-primary" aria-label="Reset" ng-click="ctrl.resetBuilder()">
-                                    Reset
-                                </md-button>
-                                <md-checkbox ng-model="ctrl.builderReadOnly" aria-label="Read only">
-                                    Read only
-                                </md-checkbox>
-                            </div>
-                        </div>
-
-                        <mw-form-builder api="ctrl.formBuilder" options="ctrl.optionsBuilder" form-data="ctrl.formData" form-status="ctrl.formStatus" read-only="ctrl.builderReadOnly"
-                                         on-image-selection="ctrl.onImageSelection()"></mw-form-builder>
+                        <mw-form-builder api="ctrl.formBuilder" options="ctrl.optionsBuilder" form-data="ctrl.formData" form-status="ctrl.formStatus" on-image-selection="ctrl.onImageSelection()"></mw-form-builder>
                     </div>
 
 

@@ -95,7 +95,6 @@ angular.module('mwFormBuilder').directive('mwQuestionPriorityListBuilder', funct
         require: '^mwFormQuestionBuilder',
         scope: {
             question: '=',
-            readOnly: '=?',
             options: '=?'
         },
         templateUrl: 'mw-question-priority-list-builder.html',
@@ -116,7 +115,7 @@ angular.module('mwFormBuilder').directive('mwQuestionPriorityListBuilder', funct
                 sortByOrderNo(ctrl.question.priorityList);
 
                 ctrl.itemsSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {
@@ -192,7 +191,6 @@ angular.module('mwFormBuilder').directive('mwQuestionOfferedAnswerListBuilder', 
         scope: {
             question: '=',
             formObject: '=',
-            readOnly: '=?',
             options: '=?',
             disableOtherAnswer: '=?'
         },
@@ -215,7 +213,7 @@ angular.module('mwFormBuilder').directive('mwQuestionOfferedAnswerListBuilder', 
                 sortAnswersByOrderNo();
 
                 ctrl.offeredAnswersSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {
@@ -306,7 +304,6 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
         scope: {
             question: '=',
             formObject: '=',
-            readOnly: '=?',
             options: '=?'
         },
         templateUrl: 'mw-question-grid-builder.html',
@@ -341,7 +338,7 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
                 sortByOrderNo(ctrl.question.grid.cols);
 
                 ctrl.rowsSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {
@@ -349,7 +346,7 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
                     }
                 };
                 ctrl.colsSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {
@@ -457,7 +454,6 @@ angular.module('mwFormBuilder').directive('mwQuestionDivisionBuilder', function 
         require: '^mwFormQuestionBuilder',
         scope: {
             question: '=',
-            readOnly: '=?',
             options: '=?'
         },
         templateUrl: 'mw-question-division-builder.html',
@@ -476,7 +472,7 @@ angular.module('mwFormBuilder').directive('mwQuestionDivisionBuilder', function 
                 sortByOrderNo(ctrl.question.divisionList);
 
                 ctrl.itemsSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {
@@ -589,8 +585,7 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
             question: '=',
             formObject: '=',
             onReady: '&',
-            isPreview: '=?',
-            readOnly: '=?'
+            isPreview: '=?'
         },
         templateUrl: 'mw-form-question-builder.html',
         controllerAs: 'ctrl',
@@ -609,7 +604,7 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
                 sortAnswersByOrderNo();
 
                 ctrl.offeredAnswersSortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     handle: ".drag-handle",
                     onEnd: function(e, ui) {
@@ -731,8 +726,7 @@ angular.module('mwFormBuilder').factory("FormParagraphBuilderId", function(){
             paragraph: '=',
             formObject: '=',
             onReady: '&',
-            isPreview: '=?',
-            readOnly: '=?'
+            isPreview: '=?'
         },
         templateUrl: 'mw-form-paragraph-builder.html',
         controllerAs: 'ctrl',
@@ -780,8 +774,7 @@ angular.module('mwFormBuilder').directive('mwFormPageElementBuilder', function (
             isActive: '=',
             isFirst: '=',
             isLast: '=',
-            onReady: '&',
-            readOnly: '=?'
+            onReady: '&'
         },
         templateUrl: 'mw-form-page-element-builder.html',
         controllerAs: 'ctrl',
@@ -898,8 +891,7 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', ["$rootScope", fu
             formPage: '=',
             formObject: '=',
             isFirst: '=',
-            isLast: '=',
-            readOnly: '=?'
+            isLast: '='
         },
         templateUrl: 'mw-form-page-builder.html',
         controllerAs: 'ctrl',
@@ -915,7 +907,7 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', ["$rootScope", fu
                 sortElementsByOrderNo();
 
                 ctrl.sortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     group: "survey",
                     handle: ".inactive",
@@ -1114,7 +1106,6 @@ angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
             formObject: '=',
             onReady: '&',
             isPreview: '=?',
-            readOnly: '=?',
             onImageSelection: '&'
         },
         templateUrl: 'mw-form-image-builder.html',
@@ -1161,7 +1152,6 @@ angular.module('mwFormBuilder').directive('mwFormConfirmationPageBuilder', funct
         restrict: 'AE',
         scope: {
             formObject: '=',
-            readOnly: '=?',
             defaultMessage: '=?'
         },
         templateUrl: 'mw-form-confirmation-page-builder.html',
@@ -1195,7 +1185,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ["$rootScope", functi
         restrict: 'AE',
         scope: {
             formData: '=',
-            readOnly: '=?',
             options: '=?',
             formStatus: '=?',
             onImageSelection: '&',

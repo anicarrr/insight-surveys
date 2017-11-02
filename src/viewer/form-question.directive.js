@@ -17,7 +17,6 @@ angular.module('mwFormViewer').factory("FormQuestionId", function(){
         scope: {
             question: '=',
             questionResponse: '=',
-            readOnly: '=?',
             options: '=?',
             onResponseChanged: '&?'
         },
