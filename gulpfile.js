@@ -5,6 +5,7 @@ var plugins = require('gulp-load-plugins')();
 var Server = require('karma').Server;
 var browserSync = require('browser-sync').create();
 var argv = require('yargs').argv;
+var babel = require('gulp-babel');
 
 gulp.task('clean', function (cb) {
     return del(['tmp', 'dist'], cb);
@@ -71,6 +72,9 @@ function buildModuleStream(destPrefix, moduleName) {
     var materialTemplates = buildTemplates(tmpDir+'/templates/material/', moduleName, 'dist', destPrefix+'-material');
 
     var module =  gulp.src(tmpDir + '/**/*.js')
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(plugins.plumber({ errorHandler: onError }))
         .pipe(plugins.angularFilesort())
         .pipe(plugins.ngAnnotate())
