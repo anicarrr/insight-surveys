@@ -1,6 +1,6 @@
 .mw-form-builder{
-    $bg-color:#e4e5e6;
-    background-color: $bg-color;
+    @bg-color:#e4e5e6;
+    background-color: @bg-color;
 
     .mw-title-page{
         background-color: #ffffff;
@@ -113,7 +113,7 @@
         }
 
         .mw-page-bottom-tab-container{
-            $bottom-tab-height: 35px;
+            @bottom-tab-height: 35px;
             position: absolute;
             right: -3px;
             bottom: -1px;
@@ -123,9 +123,9 @@
             }
 
             .mw-form-page-bottom-tab{
-                background-color: $bg-color;
+                background-color: @bg-color;
                 display: inline-block;
-                height: $bottom-tab-height;
+                height: @bottom-tab-height;
 
                 .page-flow-select{
                     color: #4d4d4d;
@@ -145,8 +145,8 @@
             }
             .mw-page-bottom-tab-triangle{
 
-                border-left: $bottom-tab-height solid transparent;
-                border-bottom: $bottom-tab-height solid $bg-color;
+                border-left: @bottom-tab-height solid transparent;
+                border-bottom: @bottom-tab-height solid @bg-color;
                 display: inline-block;
                 height: 0;
 
@@ -155,7 +155,7 @@
             }
 
             .mw-page-bottom-tab-actions{
-                background-color: $bg-color;
+                background-color: @bg-color;
                 padding: 4px;
 
                 button{

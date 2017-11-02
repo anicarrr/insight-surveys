@@ -32,10 +32,10 @@
     "font-awesome": "4.x",
     "angular-elastic": "2.x",
     "angular-bootstrap": "2.5",
-    "Sortable": "dev"
+    "Sortable": "dev"    
   },
   "devDependencies": {
-    "bootstrap-sass": "3.x",
+    "bootstrap-less": "3.x",
     "angular-translate-loader-partial": "2.x",
     "angular-translate-loader-static-files": "2.x",
     "angular-mocks": "~1.4.8",

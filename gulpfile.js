@@ -13,7 +13,7 @@ gulp.task('clean', function (cb) {
 gulp.task('build-css', ['clean'], function () {
     return gulp.src('./styles/*')
         .pipe(plugins.plumber({ errorHandler: onError }))
-        .pipe(plugins.sass())
+        .pipe(plugins.less())
         .pipe(plugins.cleanCss())
         .pipe(plugins.rename({
             extname: '.min.css'
