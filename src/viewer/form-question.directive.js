@@ -30,6 +30,24 @@ angular.module('mwFormViewer').factory("FormQuestionId", function(){
             // to make sure bindings have been initialized.
             this.$onInit = function() {
                 ctrl.id = FormQuestionId.next();
+                
+                ctrl.translations = {
+                    question : {
+                        preview : {
+                            text : "Short answer text",
+                            textarea : "Long answer text",
+                            otherAnswer : "Other"
+                        },
+                        division : {
+                            quantity : "Quantity",
+                            unit : "Unit label",
+                            assignedSumLabel : "Assigned",
+                            fromRequiredLabel : "from required"
+            
+                        }
+                    }
+
+                }
 
                 if(ctrl.question.type=='radio'){
                     if(!ctrl.questionResponse.selectedAnswer){
