@@ -9,12 +9,13 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
             formPage: '=',
             formObject: '=',
             isFirst: '=',
-            isLast: '='
+            isLast: '=',
+            readOnly: '=?'
         },
         templateUrl: 'mw-form-page-builder.html',
         controllerAs: 'ctrl',
         bindToController: true,
-        controller: function($scope, $timeout, mwFormUuid, mwFormClone, mwFormBuilderOptions){
+        controller: function($scope, $timeout, $interpolate, mwFormUuid, mwFormClone, mwFormBuilderOptions, $interpolate){
             var ctrl = this;
             // Put initialization logic inside `$onInit()`
             // to make sure bindings have been initialized.
@@ -23,9 +24,26 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
                 ctrl.formPage.namedPage = !!ctrl.formPage.name;
                 ctrl.isFolded = false;
                 sortElementsByOrderNo();
+                ctrl.translations = {
+                    addPage : "Add Page",
+                    pageTabHeading: $interpolate('After page {{ctrl.formPage.number}}'),
+                    pageWithNameCheckbox: "named",
+                    afterPage : $interpolate('Page {{ctrl.formPage.number}} of {{ctrl.formObject.pages.length}}'),
+                    paragraph : "Paragraph",    
+                    image : "Image",
+                    question : "Question",
+                    pageName : "Page name",
+                    addElement : "Add element",
+                    pageElementsEmpty : "Empty page",
+                    removePage : "Remove page",
+                    buttonsMoveUp: "Move up",
+                    buttonsMoveDown: "Move Down",
+                    buttonsUnfold: "Unfold",
+                    buttonsFold: "Fold",
+                }
 
                 ctrl.sortableConfig = {
-                    disabled: false,
+                    disabled: ctrl.readOnly,
                     ghostClass: "beingDragged",
                     group: "survey",
                     handle: ".inactive",
