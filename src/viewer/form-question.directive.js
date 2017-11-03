@@ -44,7 +44,10 @@ angular.module('mwFormViewer').factory("FormQuestionId", function(){
                             assignedSumLabel : "Assigned",
                             fromRequiredLabel : "from required"
             
-                        }
+                        },
+                        starNo: "Number of stars",
+                        ready: "Ready",
+                        required: "Required",
                     }
 
                 }

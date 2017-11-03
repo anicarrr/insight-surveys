@@ -35,6 +35,34 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
                 ctrl.formSubmitted=false;
 
                 sortAnswersByOrderNo();
+                
+                ctrl.translations = {
+                    question : {
+                        preview : {
+                            text : "Short answer text",
+                            textarea : "Long answer text",
+                            otherAnswer : "Other"
+                        },
+                        priority: {
+                            sorted: "Sorted",
+                            available: "Available",
+                            clickToAddItem: "Click to add item"
+                        },
+                        division: {
+                            quantity: "Quantity",
+                            unit: "Unit label",
+                            assignedSumLabel: "Assigned",
+                            fromRequiredLabel: "from required"            
+                        }
+                    },
+                    pageFlow : {
+                        afterPage:"After page {{page}}:",
+                        afterQuestionAnswer: "Go to page based on answer",
+                        goToPage: "Go to page {{page.number}}",
+                        goToNextPage: "Continue to next page",
+                        submitForm: "Submit form"
+                    }
+                }
 
                 ctrl.offeredAnswersSortableConfig = {
                     disabled: false,
