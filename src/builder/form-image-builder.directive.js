@@ -28,6 +28,7 @@ angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
             var ctrl = this;
             ctrl.id = FormImageBuilderId.next();
             ctrl.formSubmitted=false;
+            ctrl.translations = { questionReady: "Ready" };
 
             ctrl.save=function(){
                 ctrl.formSubmitted=true;
