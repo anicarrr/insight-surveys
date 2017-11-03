@@ -15,7 +15,7 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
         templateUrl: 'mw-form-page-builder.html',
         controllerAs: 'ctrl',
         bindToController: true,
-        controller: function($scope, $timeout, mwFormUuid, mwFormClone, mwFormBuilderOptions, $interpolate){
+        controller: function($scope, $timeout, $interpolate, mwFormUuid, mwFormClone, mwFormBuilderOptions, interpolate){
             var ctrl = this;
             // Put initialization logic inside `$onInit()`
             // to make sure bindings have been initialized.
