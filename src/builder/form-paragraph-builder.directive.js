@@ -31,6 +31,7 @@ angular.module('mwFormBuilder').factory("FormParagraphBuilderId", function(){
             ctrl.$onInit = function() {
                 ctrl.id = FormParagraphBuilderId.next();
                 ctrl.formSubmitted=false;
+                ctrl.translations = { questionReady: "Ready" };
             };
 
             ctrl.save=function(){
