@@ -525,7 +525,8 @@ angular.module('mwFormBuilder').directive('mwLabel', function () {
         scope: {
             labelKey: "@?",
             labelText: "@?",
-            labelFor: "@",
+            labelFor: "<",
+            labelValue: "<",
             labelClass: "@",
             labelTranslateValues: "="
         },
@@ -1104,6 +1105,10 @@ angular.module('mwFormBuilder').directive('mwFormConfirmationPageBuilder', funct
         bindToController: true,
         controller: ["$timeout", function controller($timeout) {
             var ctrl = this;
+            ctrl.translations = {
+                confirmationPage: "Confirmation page",
+                customMessage: "Custom confirmation message"
+            };
             ctrl.hoverEdit = false;
 
             ctrl.hoverIn = function () {

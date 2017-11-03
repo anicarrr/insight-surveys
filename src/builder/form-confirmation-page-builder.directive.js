@@ -12,6 +12,10 @@ angular.module('mwFormBuilder').directive('mwFormConfirmationPageBuilder', funct
         bindToController: true,
         controller: function($timeout){
             var ctrl = this;
+            ctrl.translations = { 
+                confirmationPage: "Confirmation page",
+                customMessage: "Custom confirmation message"
+            };
             ctrl.hoverEdit = false;
 
 

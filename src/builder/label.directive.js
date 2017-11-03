@@ -7,7 +7,8 @@ angular.module('mwFormBuilder').directive('mwLabel', function () {
         scope: {
             labelKey: "@?",
             labelText: "@?",
-            labelFor: "@",
+            labelFor: "<",
+            labelValue: "<",
             labelClass: "@",
             labelTranslateValues: "="
         },
