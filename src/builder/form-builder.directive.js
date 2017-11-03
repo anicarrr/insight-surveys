@@ -6,6 +6,7 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
         restrict: 'AE',
         scope: {
             formData: '=',
+            readOnly: '=?',
             options: '=?',
             formStatus: '=?',
             onImageSelection: '&',
@@ -20,6 +21,7 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
             // to make sure bindings have been initialized.
             ctrl.$onInit = function() {
                 ctrl.currentPage = 0;
+                ctrl.translations = {addPage : "Add Page"};
 
                 if(!ctrl.formData.pages || !ctrl.formData.pages.length){
                     ctrl.formData.pages = [];
