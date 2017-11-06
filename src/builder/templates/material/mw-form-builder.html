@@ -5,13 +5,13 @@
 
             <md-input-container class="md-block">
                 <mw-label label-for="formName" label-key="mwForm.form.name"></mw-label>
-                <input type="text" class="form-control" name="formName" id="formName" ng-model="ctrl.formData.name" ng-readonly="ctrl.readOnly" required>
+                <input type="text" class="form-control" name="formName" id="formName" ng-model="ctrl.formData.name" required>
             </md-input-container>
 
 
             <md-input-container class="md-block">
                 <mw-label label-for="formDescription" label-key="mwForm.form.description"></mw-label>
-                <textarea msd-elastic class="form-control" name="formDescription" ng-model="ctrl.formData.description" id="formDescription" ng-readonly="ctrl.readOnly"/>
+                <textarea msd-elastic class="form-control" name="formDescription" ng-model="ctrl.formData.description" id="formDescription"/>
             </md-input-container>
 
         </div>
@@ -19,7 +19,7 @@
 
         <div class="form-page-list">
             <mw-form-page-builder ng-repeat="page in ctrl.formData.pages| mwStartFrom:ctrl.currentPage * ctrl.options.pageSize | limitTo:ctrl.options.pageSize track by $index" form-page="page" form-object="ctrl.formData"
-                                  is-first="$first" is-last="$last" read-only="ctrl.readOnly"></mw-form-page-builder>
+                                  is-first="$first" is-last="$last"></mw-form-page-builder>
         </div>
         <div layout="row" layout-align="center center">
             <div flex-gt-xs="75">
@@ -52,7 +52,7 @@
             <div flex>
                    
                 <div layout="row" layout-align="end">
-                        <md-button type="button" class="md-raised md-primary" ng-click="ctrl.addPage()" ng-if="!ctrl.readOnly">
+                        <md-button type="button" class="md-raised md-primary" ng-click="ctrl.addPage()">
                             <i class="fa fa-plus"></i>
                             <span>{{::ctrl.translations.addPage}}</span>                            
                         </md-button>
@@ -60,7 +60,7 @@
             </div>
         </div>
         
-        <mw-form-confirmation-page-builder form-object="ctrl.formData" read-only="ctrl.readOnly"></mw-form-confirmation-page-builder>
+        <mw-form-confirmation-page-builder form-object="ctrl.formData"></mw-form-confirmation-page-builder>
     </form>
 
 </div>

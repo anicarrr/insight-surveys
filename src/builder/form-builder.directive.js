@@ -5,8 +5,7 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
         replace: true,
         restrict: 'AE',
         scope: {
-            formData: '=',
-            readOnly: '=?',
+            formData: '=',            
             options: '=?',
             formStatus: '=?',
             onImageSelection: '&',

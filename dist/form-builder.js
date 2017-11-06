@@ -877,8 +877,7 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', ["$rootScope", fu
             formPage: '=',
             formObject: '=',
             isFirst: '=',
-            isLast: '=',
-            readOnly: '=?'
+            isLast: '='
         },
         templateUrl: 'mw-form-page-builder.html',
         controllerAs: 'ctrl',
@@ -911,7 +910,7 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', ["$rootScope", fu
                 };
 
                 ctrl.sortableConfig = {
-                    disabled: ctrl.readOnly,
+                    disabled: false,
                     ghostClass: "beingDragged",
                     group: "survey",
                     handle: ".inactive",
@@ -1177,7 +1176,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ["$rootScope", functi
         restrict: 'AE',
         scope: {
             formData: '=',
-            readOnly: '=?',
             options: '=?',
             formStatus: '=?',
             onImageSelection: '&',
