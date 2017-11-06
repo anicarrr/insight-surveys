@@ -25,7 +25,7 @@ angular.module('mwFormBuilder').directive('mwQuestionDivisionBuilder', function 
                 sortByOrderNo(ctrl.question.divisionList);
                 
                 ctrl.translations = {
-                    buttons: {
+                    buttonsRemove: {
                         "remove": "Remove"
                     }
                 };
