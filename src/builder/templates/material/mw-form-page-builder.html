@@ -2,7 +2,7 @@
     <div ng-mouseover="ctrl.hoverIn()" ng-mouseleave="ctrl.hoverOut()">
         <div class="mw-page-tab-container">
             <div class="mw-form-page-tab">
-                <span class="mw-page-tab-text" role="heading">{{::ctrl.translations.pageTabHeading}}</span>
+                <span class="mw-page-tab-text" role="heading">{{::ctrl.translations.pageTabHeading.page}} {{ctrl.formPage.number}} {{::ctrl.translations.pageTabHeading.of}} {{ctrl.formObject.pages.length}}</span>
                 <span class="mw-page-tab-checkbox">
                     <label>
                         <input type="checkbox" ng-model="ctrl.formPage.namedPage"><span class="mw-page-tab-checkbox-text">{{::ctrl.translations.pageWithNameCheckbox}}</span>
@@ -83,7 +83,7 @@
                 </td>
                 <td class="mw-form-page-bottom-tab">
                     <div class="page-flow-select form-inline">
-                        <label ng-attr-for="page-flow-select-{{ctrl.formPage.number}}">{{::ctrl.translations.afterPage}}</label>
+                        <label ng-attr-for="page-flow-select-{{ctrl.formPage.number}}">{{::ctrl.translations.afterPage}} {{ctrl.formPage.number}}</label>
                         <select ng-attr-id="page-flow-select-{{ctrl.formPage.number}}" ng-options="pageFlow.label|translate:pageFlow for pageFlow in ctrl.possiblePageFlow"  ng-model="ctrl.formPage.pageFlow"  class="form-control"></select>
                     </div>
 
@@ -91,7 +91,7 @@
                 
                 <td class="mw-page-bottom-tab-actions" >
                     <button type="button" role="button" class="btn" ng-click="ctrl.addPage()"
-                            ng-attr-title="{{::ctrl.addPage}}">
+                            ng-attr-title="{{::ctrl.translations.addPage}}">
                         <md-tooltip md-direction="top">
                             {{::ctrl.translations.addPage}}
                         </md-tooltip>

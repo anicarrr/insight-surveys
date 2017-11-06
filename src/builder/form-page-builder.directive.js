@@ -25,9 +25,12 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
                 sortElementsByOrderNo();
                 ctrl.translations = {
                     addPage : "Add Page",
-                    pageTabHeading: "After page " + ctrl.formPage.number,
+                    afterPage: "After page",
                     pageWithNameCheckbox: "named",
-                    afterPage : "Page " + ctrl.formPage.number + " of " + ctrl.formObject.pages.length,
+                    pageTabHeading: {
+                        page: "Page",
+                        of: "of"
+                    },
                     paragraph : "Paragraph",    
                     image : "Image",
                     question : "Question",
