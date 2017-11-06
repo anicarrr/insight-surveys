@@ -414,6 +414,27 @@ angular.module('mwFormViewer').factory("FormQuestionId", function () {
             this.$onInit = function () {
                 ctrl.id = FormQuestionId.next();
 
+                ctrl.translations = {
+                    question: {
+                        preview: {
+                            text: "Short answer text",
+                            textarea: "Long answer text",
+                            otherAnswer: "Other"
+                        },
+                        division: {
+                            quantity: "Quantity",
+                            unit: "Unit label",
+                            assignedSumLabel: "Assigned",
+                            fromRequiredLabel: "from required"
+
+                        },
+                        starNo: "Number of stars",
+                        ready: "Ready",
+                        required: "Required"
+                    }
+
+                };
+
                 if (ctrl.question.type == 'radio') {
                     if (!ctrl.questionResponse.selectedAnswer) {
                         ctrl.questionResponse.selectedAnswer = null;

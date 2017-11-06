@@ -48,7 +48,7 @@
                 <div class="empty-page-element-list-label form-group" ng-if="!ctrl.formPage.elements || (ctrl.formPage.elements && ctrl.formPage.elements.length === 0)">
                     <span>{{::ctrl.translations.pageElementsEmpty}}</span>
                 </div>
-                <mw-form-page-element-builder  ng-repeat="element in ctrl.formPage.elements" page-element="element" form-object="ctrl.formObject" is-active="ctrl.isElementActive(element)" on-ready="ctrl.onElementReady()" ng-click="ctrl.selectElement(element)" is-first="$first" is-last="$last" read-only="ctrl.readOnly"></mw-form-page-element-builder>
+                <mw-form-page-element-builder  ng-repeat="element in ctrl.formPage.elements track by element.id" page-element="element" form-object="ctrl.formObject" is-active="ctrl.isElementActive(element)" on-ready="ctrl.onElementReady()" ng-click="ctrl.selectElement(element)" is-first="$first" is-last="$last" read-only="ctrl.readOnly"></mw-form-page-element-builder>
             </div>
 
 
