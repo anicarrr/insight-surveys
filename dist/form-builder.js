@@ -450,6 +450,12 @@ angular.module('mwFormBuilder').directive('mwQuestionDivisionBuilder', function 
                 }
                 sortByOrderNo(ctrl.question.divisionList);
 
+                ctrl.translations = {
+                    buttonsRemove: {
+                        "remove": "Remove"
+                    }
+                };
+
                 ctrl.itemsSortableConfig = {
                     disabled: false,
                     ghostClass: "beingDragged",
