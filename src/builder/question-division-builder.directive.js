@@ -23,6 +23,12 @@ angular.module('mwFormBuilder').directive('mwQuestionDivisionBuilder', function 
                     ctrl.addNewItem();
                 }
                 sortByOrderNo(ctrl.question.divisionList);
+                
+                ctrl.translations = {
+                    buttons: {
+                        "remove": "Remove"
+                    }
+                };
 
                 ctrl.itemsSortableConfig = {
                     disabled: false,
