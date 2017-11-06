@@ -84,7 +84,7 @@
                 <td class="mw-form-page-bottom-tab">
                     <div class="page-flow-select form-inline">
                         <label ng-attr-for="page-flow-select-{{ctrl.formPage.number}}">{{::ctrl.translations.afterPage}}</label>
-                        <select ng-attr-id="page-flow-select-{{ctrl.formPage.number}}" ng-options="pageFlow.label|translate:pageFlow for pageFlow in ctrl.possiblePageFlow"  ng-model="ctrl.formPage.pageFlow"  class="form-control" ng-disabled="ctrl.readOnly"></select>
+                        <select ng-attr-id="page-flow-select-{{ctrl.formPage.number}}" ng-options="pageFlow.label|translate:pageFlow for pageFlow in ctrl.possiblePageFlow"  ng-model="ctrl.formPage.pageFlow"  class="form-control"></select>
                     </div>
 
                 </td>
