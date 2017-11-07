@@ -24,6 +24,23 @@ angular.module('mwFormBuilder').directive('mwQuestionOfferedAnswerListBuilder', 
                     radio:{},
                     checkbox:{}
                 };
+                 
+                ctrl.translations = {
+                    question: {
+                        otherLabel: "Other: ",
+                        userAnswer: "User answer"
+                    },
+                    buttons: {
+                        remove: "Remove",
+                        addOption: "Add Option",
+                        addOther: "Add Other"
+                    },
+                    grid: {
+                        rowLabel: "Row ",
+                        clickToAddRow: "Click to add row",
+                        columnLabel: "Column "
+                    }
+                }
 
                 ctrl.isNewAnswer = {};
 
