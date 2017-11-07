@@ -45,7 +45,14 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
                     ctrl.question.grid.cellInputType = ctrl.cellInputTypes[0];
                 }
 
-
+                ctrl.translations = {
+                    buttonsRemove: "Remove",
+                    grid: {
+                        rowLabel: "Row ",
+                        clickToAddRow: "Click to add row",
+                        columnLabel: "Column "
+                    }
+                }
 
                 sortByOrderNo(ctrl.question.grid.rows);
                 sortByOrderNo(ctrl.question.grid.cols);
@@ -144,6 +151,20 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
                 }
 
 
+            };
+
+            ctrl.controllerType = function(type) {
+                debugger
+                var types = {
+                    "text": "Short text",                                                            
+                    "radio" : "Radio",                                          
+                    "checkbox" : "Checkboxes",
+                    "number" : "Number", 
+                    "date" : "Date",  
+                    "time" : "Time"                           
+                }
+
+                return types[type]
             };
 
             // Prior to v1.5, we need to call `$onInit()` manually.

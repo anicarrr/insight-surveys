@@ -164,6 +164,30 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
                 clearCustomPageFlow();
             };
 
+            ctrl.controllerType = function() {
+                debugger
+                var types = {
+                    "text": "Short text",                    
+                    "textarea": "Long text",                    
+                    "radio" : "Radio",                    
+                    "select" : "Select",                    
+                    "checkbox" : "Checkboxes",
+                    "grid" : "Grid",
+                    "priority" : "Priority",                    
+                    "division" : "Division",                    
+                    "number" : "Number",                    
+                    "date" : "Date",                    
+                    "datetime" : "Datetime",                    
+                    "time" : "Time",                    
+                    "email" : "Email",
+                    "range" : "Range",                    
+                    "url" : "URL",                    
+                    "star" : "Star Rating"                
+                }
+
+                return types[ctrl.question.type]
+            };
+
             // Prior to v1.5, we need to call `$onInit()` manually.
             // (Bindings will always be pre-assigned in these versions.)
             if (angular.version.major === 1 && angular.version.minor < 5) {
