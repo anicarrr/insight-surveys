@@ -13,7 +13,7 @@
                         <mw-label label-for="question-type-{{ctrl.id}}" label-class="col-sm-2 control-label"  label-key="mwForm.question.type"></mw-label>
                         <md-select ng-attr-id="question-type-{{ctrl.id}}" ng-model="ctrl.question.type" ng-change="ctrl.questionTypeChanged()" required>
                             <md-option ng-repeat="type in ctrl.questionTypes track by $index" ng-value="type">
-                                {{'mwForm.question.types.'+type+'.name'|translate}}
+                                {{controllerType()}}
                             </md-option>
                         </md-select>
                     </md-input-container>
