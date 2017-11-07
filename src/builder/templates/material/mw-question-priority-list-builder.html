@@ -13,7 +13,7 @@
             <md-button role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeItem(item)" 
                        ng-attr-title="{{'mwForm.buttons.remove' | translate}}">
                 <md-tooltip md-direction="top">
-                    {{'mwForm.buttons.remove' | translate}}
+                    {{::ctrl.translations.buttons.remove}
                 </md-tooltip>
                 <i class="fa fa-times"></i>
             </md-button>
