@@ -20,7 +20,11 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
             // to make sure bindings have been initialized.
             ctrl.$onInit = function() {
                 ctrl.currentPage = 0;
-                ctrl.translations = {addPage : "Add Page"};
+                ctrl.translations = {
+                    addPage : "Add Page",
+                    formName: "Form name",
+                    description: "Description"
+                };
 
                 if(!ctrl.formData.pages || !ctrl.formData.pages.length){
                     ctrl.formData.pages = [];

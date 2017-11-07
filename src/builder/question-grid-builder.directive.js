@@ -19,6 +19,15 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
             // Put initialization logic inside `$onInit()`
             // to make sure bindings have been initialized.
             this.$onInit = function() {
+                ctrl.translations = {
+                    question: {
+                        grid: {
+                            cellInputType: "Cell input type",
+                            rowLabel: "Row",
+                            columnLabel: "Column"
+                        }
+                    }
+                }
                 ctrl.cellInputTypes = MW_GRID_CELL_INPUT_TYPES;
                 ctrl.isNewInput = {};
 

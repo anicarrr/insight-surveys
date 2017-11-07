@@ -4,7 +4,7 @@
         <div>
             <div style="margin-top: 20px;" layout="row" layout-align="start center">
                 <md-input-container  flex-gt-md="30" >
-                    <mw-label label-for="mw-grid-cell-input-type-{{ctrl.question.id}}" label-class="col-sm-2 control-label"  label-key="mwForm.question.grid.cellInputType"></mw-label>
+                    <mw-label label-for="mw-grid-cell-input-type-{{ctrl.question.id}}" label-class="col-sm-2 control-label"  label-value="ctrl.translations.question.grid.cellInputType"></mw-label>
                     <md-select ng-attr-id="mw-grid-cell-input-type-{{ctrl.question.id}}" ng-model="ctrl.question.grid.cellInputType"  required>
                         <md-option ng-repeat="opt in ctrl.cellInputTypes track by $index" ng-value="opt">
                             {{'mwForm.question.grid.cellInputTypes.'+opt|translate}}
@@ -19,7 +19,7 @@
         <div class="mw-grid-row-list" ng-sortable="ctrl.rowsSortableConfig" ng-model="ctrl.question.grid.rows" role="list">
             <div class="mw-grid-item form-group" ng-repeat="row in ctrl.question.grid.rows track by row.id" role="listitem" layout="row" layout-align="start center">
                 <div flex-gt-xs="20">
-                    <mw-label label-for="mw-grid-row-{{row.id}}-label" label-class="col-sm-2"  label-key="mwForm.question.grid.rowLabel" label-translate-values="{row: row.orderNo}"></mw-label>
+                    <mw-label label-for="mw-grid-row-{{row.id}}-label" label-class="col-sm-2"  label-value="{{ctrl.translations.question.grid.rowLabel row.orderNo}}"></mw-label>
                 </div>
 
                 <div flex>
@@ -69,7 +69,7 @@
             <div class="mw-grid-item form-group" ng-repeat="col in ctrl.question.grid.cols track by col.id" role="listitem" layout="row" layout-align="start center">
 
                 <div flex-gt-xs="20">
-                    <mw-label label-for="mw-grid-col-{{col.id}}-label" label-class="col-sm-2 control-label"  label-key="mwForm.question.grid.columnLabel" label-translate-values="{col: col.orderNo}"></mw-label>
+                    <mw-label label-for="mw-grid-col-{{col.id}}-label" label-class="col-sm-2 control-label"  label-value="{{ctrl.translations.question.grid.columnLabel col.orderNo}}"></mw-label>
                 </div>
 
                 <div flex>

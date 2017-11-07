@@ -17,6 +17,15 @@ angular.module('mwFormBuilder').directive('mwQuestionDivisionBuilder', function 
             // Put initialization logic inside `$onInit()`
             // to make sure bindings have been initialized.
             ctrl.$onInit = function() {
+                ctrl.translations = {
+                    question: {
+                        division: {
+                            quantity: "Quantity",
+                            unit: "Unit label"
+                        }
+                    }
+                };
+
                 ctrl.isNewItem = {};
                 if(!ctrl.question.divisionList){
                     ctrl.question.divisionList = [];

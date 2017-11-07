@@ -4,13 +4,13 @@
             <div class="form-horizontal">
 
                     <md-input-container class="md-block">
-                        <mw-label label-for="question-text-{{ctrl.id}}" label-key="mwForm.question.text"></mw-label>
+                        <mw-label label-for="question-text-{{ctrl.id}}" label-value="ctrl.translations.question.text"></mw-label>
                         <input type="text" name="text" ng-attr-id="question-text-{{ctrl.id}}" ng-model="ctrl.question.text" required>
                     </md-input-container>
 
                 <div class="mw-question-type" layout="row" layout-align="start center">
                     <md-input-container flex-gt-md="30">
-                        <mw-label label-for="question-type-{{ctrl.id}}" label-class="col-sm-2 control-label"  label-key="mwForm.question.type"></mw-label>
+                        <mw-label label-for="question-type-{{ctrl.id}}" label-class="col-sm-2 control-label"  label-value="ctrl.translations.question.type"></mw-label>
                         <md-select ng-attr-id="question-type-{{ctrl.id}}" ng-model="ctrl.question.type" ng-change="ctrl.questionTypeChanged()" required>
                             <md-option ng-repeat="type in ctrl.questionTypes track by $index" ng-value="type">
                                 {{'mwForm.question.types.'+type+'.name'|translate}}
@@ -60,8 +60,8 @@
                     </div>
                     <div ng-switch-when="number" class="form-inline">
                         <div class="range-config form-inline">
-                            <md-input-container><mw-label label-for="question-number-range-min-{{ctrl.id}}" label-key="mwForm.question.number.min"></mw-label><input ng-attr-id="question-number-range-min-{{ctrl.id}}" class="form-control" type="number" ng-model="ctrl.question.min" max="{{ctrl.question.max}}" /></md-input-container>
-                            <md-input-container><mw-label label-for="question-number-range-max-{{ctrl.id}}" label-key="mwForm.question.number.max"></mw-label><input ng-attr-id="question-number-range-max-{{ctrl.id}}" class="form-control" type="number" min="{{ctrl.question.min}}" ng-model="ctrl.question.max" /></md-input-container>
+                            <md-input-container><mw-label label-for="question-number-range-min-{{ctrl.id}}" label-value="ctrl.translations.question.number.min"></mw-label><input ng-attr-id="question-number-range-min-{{ctrl.id}}" class="form-control" type="number" ng-model="ctrl.question.min" max="{{ctrl.question.max}}" /></md-input-container>
+                            <md-input-container><mw-label label-for="question-number-range-max-{{ctrl.id}}" label-value="ctrl.translations.question.number.max"></mw-label><input ng-attr-id="question-number-range-max-{{ctrl.id}}" class="form-control" type="number" min="{{ctrl.question.min}}" ng-model="ctrl.question.max" /></md-input-container>
                         </div>
                         <br/>
                         <md-input-container>
@@ -90,8 +90,8 @@
                     </div>
                     <div ng-switch-when="range" >
                         <div class="range-config form-inline">
-                            <md-input-container><mw-label label-for="question-range-from-{{ctrl.id}}" label-key="mwForm.question.range.from"></mw-label><input ng-attr-id="question-range-from-{{ctrl.id}}" type="number" ng-model="ctrl.question.min" max="{{ctrl.question.max}}" /></md-input-container>
-                            <md-input-container><mw-label label-for="question-range-to-{{ctrl.id}}" label-key="mwForm.question.range.to"></mw-label><input ng-attr-id="question-range-to-{{ctrl.id}}"  type="number" min="{{ctrl.question.min}}" ng-model="ctrl.question.max" /></md-input-container>
+                            <md-input-container><mw-label label-for="question-range-from-{{ctrl.id}}" label-value="ctrl.translations.question.range.from"></mw-label><input ng-attr-id="question-range-from-{{ctrl.id}}" type="number" ng-model="ctrl.question.min" max="{{ctrl.question.max}}" /></md-input-container>
+                            <md-input-container><mw-label label-for="question-range-to-{{ctrl.id}}" label-value="ctrl.translations.question.range.to"></mw-label><input ng-attr-id="question-range-to-{{ctrl.id}}"  type="number" min="{{ctrl.question.min}}" ng-model="ctrl.question.max" /></md-input-container>
                         </div>
                         <br/>
                         <div class="mw-range">
@@ -128,7 +128,7 @@
                 </div>
                 <div flex>
                     <md-checkbox  ng-model="ctrl.question.required" flex>
-                        <span>{{::ctrl.translations.question.ready}}</span>
+                        <span>{{::ctrl.translations.question.required}}</span>
                     </md-checkbox>
                 </div>
 

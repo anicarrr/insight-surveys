@@ -38,6 +38,8 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
                 
                 ctrl.translations = {
                     question : {
+                        text: "Question text",
+                        type: "Question type",
                         preview : {
                             text : "Short answer text",
                             textarea : "Long answer text",
@@ -53,8 +55,18 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
                             unit: "Unit label",
                             assignedSumLabel: "Assigned",
                             fromRequiredLabel: "from required"            
-                        }
-                    },
+                        },
+                        number: {
+                            min: "Min",
+                            max: "Max"
+                        },
+                        range: {
+                            from: "Range from",
+                            to: "to"
+                        },
+                        ready: "Ready",
+                        required: "Required"
+                      },
                     pageFlow : {
                         afterPage:"After page {{page}}:",
                         afterQuestionAnswer: "Go to page based on answer",
