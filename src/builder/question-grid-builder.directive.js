@@ -137,6 +137,20 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
 
             };
 
+            ctrl.controllerType = function(type) {
+                debugger
+                var types = {
+                    "text": "Short text",                                                            
+                    "radio" : "Radio",                                          
+                    "checkbox" : "Checkboxes",
+                    "number" : "Number", 
+                    "date" : "Date",  
+                    "time" : "Time"                           
+                }
+
+                return types[type]
+            };
+
             // Prior to v1.5, we need to call `$onInit()` manually.
             // (Bindings will always be pre-assigned in these versions.)
             if (angular.version.major === 1 && angular.version.minor < 5) {

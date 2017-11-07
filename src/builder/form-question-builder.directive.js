@@ -174,7 +174,7 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
                 }
 
                 return types[ctrl.question.type]
-            }
+            };
 
             // Prior to v1.5, we need to call `$onInit()` manually.
             // (Bindings will always be pre-assigned in these versions.)

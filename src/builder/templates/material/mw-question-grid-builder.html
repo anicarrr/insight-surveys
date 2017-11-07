@@ -7,7 +7,7 @@
                     <mw-label label-for="mw-grid-cell-input-type-{{ctrl.question.id}}" label-class="col-sm-2 control-label"  label-key="mwForm.question.grid.cellInputType"></mw-label>
                     <md-select ng-attr-id="mw-grid-cell-input-type-{{ctrl.question.id}}" ng-model="ctrl.question.grid.cellInputType"  required>
                         <md-option ng-repeat="opt in ctrl.cellInputTypes track by $index" ng-value="opt">
-                            {{'mwForm.question.grid.cellInputTypes.'+opt|translate}}
+                            {{controllerType()}}
                         </md-option>
                     </md-select>
                 </md-input-container>
