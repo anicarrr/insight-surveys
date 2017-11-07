@@ -164,8 +164,8 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
                 clearCustomPageFlow();
             };
 
-            ctrl.controllerType = function() {
-                debugger
+            ctrl.controllerType = function(type) {
+                
                 var types = {
                     "text": "Short text",                    
                     "textarea": "Long text",                    
@@ -185,7 +185,7 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
                     "star" : "Star Rating"                
                 }
 
-                return types[ctrl.question.type]
+                return types[type]
             };
 
             // Prior to v1.5, we need to call `$onInit()` manually.
