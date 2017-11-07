@@ -36,7 +36,14 @@ angular.module('mwFormBuilder').directive('mwQuestionGridBuilder', function () {
                     ctrl.question.grid.cellInputType = ctrl.cellInputTypes[0];
                 }
 
-
+                ctrl.translations = {
+                    buttonsRemove: "Remove",
+                    grid: {
+                        rowLabel: "Row ",
+                        clickToAddRow: "Click to add row",
+                        columnLabel: "Column "
+                    }
+                }
 
                 sortByOrderNo(ctrl.question.grid.rows);
                 sortByOrderNo(ctrl.question.grid.cols);
