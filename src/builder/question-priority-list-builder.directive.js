@@ -25,6 +25,12 @@ angular.module('mwFormBuilder').directive('mwQuestionPriorityListBuilder', funct
                 }
 
                 sortByOrderNo(ctrl.question.priorityList);
+                
+                ctrl.translations = {
+                    buttons: {
+                        remove: "Remove"                        
+                    }
+                }
 
                 ctrl.itemsSortableConfig = {
                     disabled: false,
