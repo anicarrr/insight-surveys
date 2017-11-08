@@ -38,6 +38,14 @@ angular.module('mwFormViewer').directive('mwFormViewer', function ($rootScope) {
                     ctrl.pageIdToPage[page.id]=page;
                 });
 
+                ctrl.translations = {
+                    buttons : {
+                        begin: "Begin",
+                        back: "Back",
+                        next: "Next",
+                        submit: "Submit"
+                    }
+                }
 
                 ctrl.buttons={
                     prevPage: {

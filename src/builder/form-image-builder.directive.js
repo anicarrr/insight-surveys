@@ -30,7 +30,8 @@ angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
             ctrl.formSubmitted=false;
             ctrl.translations = { 
                 questionReady: "Ready",
-                imageCaption: "Image caption" 
+                imageCaption: "Image caption",
+                selectImageButton: "Select image"
             };
 
             ctrl.save=function(){

@@ -29,7 +29,8 @@ angular.module('mwFormBuilder').directive('mwQuestionPriorityListBuilder', funct
                 ctrl.translations = {
                     buttons: {
                         remove: "Remove"                        
-                    }
+                    },
+                    clickToAddItem: "Click to add item"
                 }
 
                 ctrl.itemsSortableConfig = {

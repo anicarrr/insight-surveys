@@ -28,7 +28,8 @@ angular.module('mwFormBuilder').directive('mwQuestionOfferedAnswerListBuilder', 
                 ctrl.translations = {
                     question: {
                         otherLabel: "Other: ",
-                        userAnswer: "User answer"
+                        userAnswer: "User answer",
+                        orLabel: "or "
                     },
                     buttons: {
                         remove: "Remove",
