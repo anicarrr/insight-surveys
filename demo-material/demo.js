@@ -84,10 +84,6 @@ angular.module('app', ['ngMaterial', 'mwFormBuilder', 'mwFormViewer', 'mwFormUti
             }
         };
 
-        ctrl.changeLanguage = function (languageKey) {
-            $translate.use(languageKey);
-        };
-
         ctrl.getMerged=function(){
             return mwFormResponseUtils.mergeFormWithResponse(ctrl.formData, ctrl.responseData);
         };

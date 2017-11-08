@@ -32,18 +32,6 @@
         <md-button aria-label="View on GitHub" class="md-icon-button" href="https://github.com/mwasiluk/angular-surveys" target="_blank">
             <i class="fa fa-github fa-lg"></i>
         </md-button>
-        <md-menu>
-            <md-button aria-label="Change language" class="md-icon-button" ng-click="$mdOpenMenu($event)">
-                <i class="fa fa-flag fa-lg"></i>
-            </md-button>
-            <md-menu-content width="1">
-                <md-menu-item ng-repeat="language in ctrl.languages">
-                    <md-button ng-click="ctrl.changeLanguage(language)">
-                        {{language}}
-                    </md-button>
-                </md-menu-item>
-            </md-menu-content>
-        </md-menu>
     </div>
 </md-toolbar>
 
