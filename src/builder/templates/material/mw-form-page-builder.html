@@ -41,7 +41,7 @@
 
             <md-input-container class="md-block" ng-if="ctrl.formPage.namedPage">
                 <label ng-attr-for="page-name-{{ctrl.formPage.number}}">{{::ctrl.translations.pageName}}</label>
-            <input type="text" class="form-control" name="pageName" ng-attr-id="page-name-{{ctrl.formPage.number}}" ng-model="ctrl.formPage.name" ng-blur="ctrl.pageNameChanged()"  >
+            <input type="text" class="form-control" name="pageName" ng-attr-id="page-name-{{ctrl.formPage.number}}" ng-model="ctrl.formPage.name" >
             </md-input-container>
 
             <div class="page-element-list" ng-sortable="ctrl.sortableConfig" ng-model="ctrl.formPage.elements">

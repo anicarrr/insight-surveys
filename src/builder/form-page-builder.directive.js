@@ -80,15 +80,9 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
                     return a.orderNo - b.orderNo;
                 });
             }
-            ctrl.pageNameChanged = function(){
-                $rootScope.$broadcast('mwForm.pageEvents.pageNameChanged', {page: ctrl.formPage});
-            };
-
-
 
             ctrl.addElement = function(type){
                 if(!type){
-
                     type=mwFormBuilderOptions.elementTypes[0];
                 }
                 var element = createEmptyElement(type, ctrl.formPage.elements.length + 1);
@@ -103,7 +97,6 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
                     ctrl.activeElement=element;
                 }
                 ctrl.formPage.elements.splice(index,0, element);
-
             };
 
             ctrl.removeElement = function(pageElement){
@@ -146,16 +139,16 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
             };
 
             ctrl.isElementActive= function(element){
-                return ctrl.activeElement==element;
+                return ctrl.activeElement == element;
             };
 
             ctrl.selectElement = function(element){
-                ctrl.activeElement=element;
+                ctrl.activeElement = element;
             };
 
             ctrl.onElementReady = function(){
                 $timeout(function(){
-                    ctrl.activeElement=null;
+                    ctrl.activeElement = null;
                 });
             };
 

@@ -55,24 +55,14 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
                 });
             };
 
-
-            ctrl.numberOfPages=function(){
-                return Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize);
-            };
             ctrl.lastPage = function(){
-               ctrl.currentPage = Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1);
+               ctrl.currentPage = ctrl.formData.pages.length - 1;
             };
+
             ctrl.addPage = function(){
                 ctrl.formData.pages.push(createEmptyPage(ctrl.formData.pages.length+1));
                 ctrl.lastPage();
-                $rootScope.$broadcast("mwForm.pageEvents.pageAdded");
             };
-            ctrl.onChangePageSize = function(){
-                if(ctrl.currentPage > Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1)){
-                   ctrl.currentPage = Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1);
-                }
-            };
-
 
             function createEmptyPage(number){
                 var defaultPageFlow = null;
@@ -118,7 +108,7 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
                 ctrl.updatePageFlow();
             }
 
-            ctrl.addPageAfter=function(page){
+            ctrl.addPageAfter = function(page){
                 var index = ctrl.formData.pages.indexOf(page);
                 var newIndex = index+1;
                 var newPage = createEmptyPage(page.number+1);
@@ -129,11 +119,9 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
                 }
                 updatePageNumbers();
                 updateQuestionNumbers();
-                $rootScope.$broadcast("mwForm.pageEvents.pageAdded");
-
             };
 
-            ctrl.moveDownPage= function(page){
+            ctrl.moveDownPage = function(page){
                 var fromIndex = ctrl.formData.pages.indexOf(page);
                 var toIndex=fromIndex+1;
                 if(toIndex<ctrl.formData.pages.length){
@@ -141,11 +129,9 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
                 }
                 updatePageNumbers();
                 updateQuestionNumbers();
-                $rootScope.$broadcast("mwForm.pageEvents.pageMoved");
-
             };
 
-            ctrl.moveUpPage= function(page){
+            ctrl.moveUpPage = function(page){
                 var fromIndex = ctrl.formData.pages.indexOf(page);
                 var toIndex=fromIndex-1;
                 if(toIndex>=0){
@@ -153,17 +139,13 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
                 }
                 updatePageNumbers();
                 updateQuestionNumbers();
-                $rootScope.$broadcast("mwForm.pageEvents.pageMoved");
-
             };
 
-            ctrl.removePage=function(page){
+            ctrl.removePage = function(page){
                 var index = ctrl.formData.pages.indexOf(page);
                 ctrl.formData.pages.splice(index,1);
                 updatePageNumbers();
                 updateQuestionNumbers();
-                $rootScope.$broadcast("mwForm.pageEvents.pageRemoved");
-                ctrl.onChangePageSize();
             };
 
             function arrayMove(arr, fromIndex, toIndex) {
@@ -196,7 +178,7 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
             };
 
             ctrl.updatePageFlow = function(){
-                ctrl.possiblePageFlow.length=1;
+                ctrl.possiblePageFlow.length = 1;
 
                 ctrl.formData.pages.forEach(function(page){
 
@@ -213,6 +195,7 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
                     formSubmit:true,
                     label: 'mwForm.pageFlow.submitForm'
                 });
+
                 ctrl.formData.pages.forEach(function(page){
                     ctrl.possiblePageFlow.forEach(function(pageFlow){
                         if(page.pageFlow) {
@@ -234,7 +217,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
                                     }
                                 });
                             }
-
                         });
                     });
                 });
@@ -243,17 +225,7 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
             scope.$watch('ctrl.formData.pages.length', function(newVal, oldVal){
                 ctrl.updatePageFlow();
             });
-            scope.$watch('ctrl.currentPage', function(newVal, oldVal){
-                $rootScope.$broadcast("mwForm.pageEvents.pageCurrentChanged",{index:ctrl.currentPage});
-            });
-            scope.$on('mwForm.pageEvents.changePage', function(event,data){
-                if(typeof data.page !== "undefined" && data.page < ctrl.numberOfPages()){
-                   ctrl.currentPage = data.page;
-                }
-            });
-            scope.$on('mwForm.pageEvents.addPage', function(event,data){
-                ctrl.addPage();
-            });
+            
         }
     };
 });
