@@ -47,13 +47,13 @@
                         </md-input-container>
                     </div>
                     <div ng-switch-when="radio">
-                        <mw-question-offered-answer-list-builder question="ctrl.question" form-object="ctrl.formObject"></mw-question-offered-answer-list-builder>
+                        <mw-question-offered-answer-list-builder possible-page-flow="ctrl.possiblePageFlow" question="ctrl.question" form-object="ctrl.formObject"></mw-question-offered-answer-list-builder>
                     </div>
                     <div ng-switch-when="select">
-                        <mw-question-offered-answer-list-builder question="ctrl.question" form-object="ctrl.formObject" disable-other-answer="true"></mw-question-offered-answer-list-builder>
+                        <mw-question-offered-answer-list-builder possible-page-flow="ctrl.possiblePageFlow" question="ctrl.question" form-object="ctrl.formObject" disable-other-answer="true"></mw-question-offered-answer-list-builder>
                     </div>
                     <div ng-switch-when="checkbox">
-                        <mw-question-offered-answer-list-builder question="ctrl.question" form-object="ctrl.formObject"></mw-question-offered-answer-list-builder>
+                        <mw-question-offered-answer-list-builder possible-page-flow="ctrl.possiblePageFlow" question="ctrl.question" form-object="ctrl.formObject"></mw-question-offered-answer-list-builder>
                     </div>
                     <div ng-switch-when="priority">
                         <mw-question-priority-list-builder question="ctrl.question"></mw-question-priority-list-builder>

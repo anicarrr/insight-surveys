@@ -11,7 +11,8 @@ angular.module('mwFormBuilder').directive('mwFormPageElementBuilder', function (
             isActive: '=',
             isFirst: '=',
             isLast: '=',
-            onReady: '&'
+            onReady: '&',
+            possiblePageFlow: '<'
         },
         templateUrl: 'mw-form-page-element-builder.html',
         controllerAs: 'ctrl',

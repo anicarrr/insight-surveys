@@ -8,8 +8,9 @@ angular.module('mwFormBuilder').component('mwQuestionPriorityListBuilder', {
         controller: function (mwFormUuid) {
             var ctrl = this;
             ctrl.isNewItem = {};
-
+            
             this.$onInit = function () {
+
                 if (!ctrl.question.priorityList) {
                     ctrl.question.priorityList = [];
                     ctrl.addNewItem();

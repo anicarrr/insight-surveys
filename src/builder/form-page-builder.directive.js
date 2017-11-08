@@ -9,7 +9,8 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
             formPage: '=',
             formObject: '=',
             isFirst: '=',
-            isLast: '='            
+            isLast: '=',
+            possiblePageFlow: '<'            
         },
         templateUrl: 'mw-form-page-builder.html',
         controllerAs: 'ctrl',

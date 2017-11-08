@@ -18,7 +18,8 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
             question: '=',
             formObject: '=',
             onReady: '&',
-            isPreview: '=?'
+            isPreview: '=?',
+            possiblePageFlow: '<'
         },
         templateUrl: 'mw-form-question-builder.html',
         controllerAs: 'ctrl',
