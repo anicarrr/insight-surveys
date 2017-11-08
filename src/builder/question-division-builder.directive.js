@@ -22,7 +22,9 @@ angular.module('mwFormBuilder').directive('mwQuestionDivisionBuilder', function 
                         division: {
                             quantity: "Quantity",
                             unit: "Unit label"
-                        }
+                        },
+                        buttonsRemove: "Remove",
+                        clickToAddItem: "Click to add item"
                     }
                 };
 
@@ -32,12 +34,6 @@ angular.module('mwFormBuilder').directive('mwQuestionDivisionBuilder', function 
                     ctrl.addNewItem();
                 }
                 sortByOrderNo(ctrl.question.divisionList);
-                
-                ctrl.translations = {
-                    buttonsRemove: {
-                        "remove": "Remove"
-                    }
-                };
 
                 ctrl.itemsSortableConfig = {
                     disabled: false,

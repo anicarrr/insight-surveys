@@ -21,7 +21,7 @@
             <span ng-if="ctrl.question.pageFlowModifier" class="form-inline">
                   <md-input-container >
                      <md-select ng-model="answer.pageFlow">
-                       <md-option ng-value="pageFlow" ng-repeat="pageFlow in ctrl.possiblePageFlow track by $index">{{ pageFlow.label|translate:pageFlow }}</md-option>
+                       <md-option ng-value="pageFlow" ng-repeat="pageFlow in ctrl.possiblePageFlow track by $index">{{ pageFlow.label }}</md-option>
                      </md-select>
                  </md-input-container>
             </span>
@@ -42,7 +42,7 @@
             </md-input-container>
         </span>
         <span class="add-custom-answer"  ng-if="!ctrl.disableOtherAnswer && !ctrl.question.otherAnswer">
-            <span translate="mwForm.question.orLabel">or </span>
+            <span>{{::ctrl.translations.question.orLabel}} </span>
             <md-button role="button" ng-click="ctrl.addCustomAnswer()">{{::ctrl.translations.buttons.addOption}}</md-button>
         </span>
     </div>
@@ -58,9 +58,9 @@
         <md-input-container>
             <input  type="text" value="{{::ctrl.translations.question.userAnswer}}"  class="form-control offered-answer-value " readonly>
         </md-input-container>
-        <md-button type="button" role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeCustomAnswer()"                 ng-attr-title="{{'mwForm.buttons.remove' | translate}}">
+        <md-button type="button" role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeCustomAnswer()" ng-attr-title="{{::ctrl.translations.buttons.remove}}">
             <md-tooltip md-direction="top">
-                {{::ctrl.translations.buttons.remove}}}}
+                {{::ctrl.translations.buttons.remove}}
             </md-tooltip>
             <i class="fa fa-times"></i>
         </md-button>

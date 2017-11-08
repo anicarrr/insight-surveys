@@ -22,6 +22,17 @@ angular.module('mwFormBuilder').directive('mwFormPageElementBuilder', function (
             // Put initialization logic inside `$onInit()`
             // to make sure bindings have been initialized.
             ctrl.$onInit = function() {
+                ctrl.translations = { 
+                    buttons : {
+                        moveDown: "Move down",
+                        moveUp: "Move up",
+                        remove: "Remove",
+                        clone: "Clone",
+                        edit: "Edit",
+                        view: "View"
+                    } 
+                };
+
                 if(ctrl.pageElement.type=='question'){
                     if(!ctrl.pageElement.question){
                         ctrl.pageElement.question={

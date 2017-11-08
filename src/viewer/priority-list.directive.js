@@ -25,6 +25,12 @@ angular.module('mwFormViewer')
                 }
                 ctrl.idToItem = {};
 
+                ctrl.translations = {
+                    question : {
+                        sorted: "sorted",
+                        available: "available"                
+                    }
+                }
 
                 sortByPriority(ctrl.questionResponse.priorityList);
 
