@@ -8,7 +8,7 @@ angular.module('mwFormBuilder').factory("FormParagraphBuilderId", function(){
         }
     })
 
-    .directive('mwFormParagraphBuilder', function () {
+    .directive('mwFormParagraphBuilderrrr', function () {
 
     return {
         replace: true,
