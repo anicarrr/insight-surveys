@@ -12,6 +12,7 @@
                     <i class="{{button.icon}}"></i> {{button.text}}
                 </button>
             </span>
+
             <span ng-switch-when="true">
                 <button type="button" class="move-down-button" ng-click="ctrl.moveDown()" ng-if="!ctrl.isLast" ng-attr-title="{{::ctrl.translations.button.moveDown}}">
                     <md-tooltip md-direction="top"><span>{{::ctrl.translations.buttons.moveDown}}</span></md-tooltip>
@@ -23,8 +24,10 @@
                 </button>
                 <button type="button" class="remove-button" mw-confirm-click confirmed-action="ctrl.removeElement()" ng-attr-title="{{::ctrl.translations.buttons.remove}}">
                     <md-tooltip md-direction="top"><span>{{::ctrl.translations.buttons.remove}}</span></md-tooltip>
-                    <i class="fa fa-trash"></i></button>
+                    <i class="fa fa-trash"></i>
+                </button>
             </span>
+
             <span ng-switch-when="false">
                 <button type="button" aria-label="{{::ctrl.translations.buttons.clone}}" aria-hidden="false" class="edit-button" ng-click="ctrl.cloneElement($event)" ng-attr-title="{{::ctrl.translations.buttons.clone}}">
                     <md-tooltip md-direction="top"><span>{{::ctrl.translations.buttons.clone}}</span></md-tooltip>
@@ -34,19 +37,13 @@
                     <md-tooltip md-direction="top"><span>{{::ctrl.translations.buttons.edit}}</span></md-tooltip>
                     <i class="fa fa-pencil"></i>
                 </button>
-                <button type="button" aria-label="{{::ctrl.translations.buttons.view}}" aria-hidden="false" class="edit-button" ng-click="ctrl.editElement()" ng-attr-title="{{::ctrl.translations.buttons.view}}">
-                    <md-tooltip md-direction="top"><span>{{::ctrl.translations.buttons.view}}</span></md-tooltip>
-                    <i class="fa fa-eye"></i>
-                </button>
-
             </span>
-
         </div>
+
         <div ng-switch="ctrl.pageElement.type">
-            <mw-form-question-builder ng-switch-when="question" question="ctrl.pageElement.question"  form-object="ctrl.formObject" on-ready="ctrl.onReady()" is-preview="!ctrl.isActive"></mw-form-question-builder>
+            <mw-form-question-builder ng-switch-when="question" possible-page-flow="ctrl.possiblePageFlow" question="ctrl.pageElement.question"  form-object="ctrl.formObject" on-ready="ctrl.onReady()" is-preview="!ctrl.isActive"></mw-form-question-builder>
             <mw-form-image-builder ng-switch-when="image" image="ctrl.pageElement.image"  form-object="ctrl.formObject" on-ready="ctrl.onReady()" is-preview="!ctrl.isActive" on-image-selection="ctrl.onImageSelection()"></mw-form-image-builder>
             <mw-form-paragraph-builder ng-switch-when="paragraph" paragraph="ctrl.pageElement.paragraph"  form-object="ctrl.formObject" on-ready="ctrl.onReady()" is-preview="!ctrl.isActive"></mw-form-paragraph-builder>
         </div>
     </div>
-
 </div>
