@@ -10,6 +10,7 @@ angular.module('mwFormBuilder').component('mwQuestionOfferedAnswerListBuilder', 
     controllerAs: 'ctrl',
     controller: function (FormQuestionBuilderId, mwFormUuid) {
         var ctrl = this;
+        ctrl.isNewAnswer = {};
 
         this.$onInit = function () {
             ctrl.config = {
@@ -34,8 +35,6 @@ angular.module('mwFormBuilder').component('mwQuestionOfferedAnswerListBuilder', 
                     columnLabel: "Column "
                 }
             }
-
-            ctrl.isNewAnswer = {};
 
             sortAnswersByOrderNo();
 
