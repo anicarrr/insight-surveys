@@ -27,9 +27,9 @@
                     <input wd-focus-me="ctrl.isNewItem[item.id]" type="text" ng-model="item.value" ng-keypress="ctrl.keyPressedOnInput($event,item)" required class="form-control item-value " >
                 </md-input-container>
                 <md-button role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeItem(item)"
-                           ng-attr-title="{{::ctrl.translations.buttonsRemove}}">
+                           ng-attr-title="{{::ctrl.translations.question.buttonsRemove}}">
                     <md-tooltip md-direction="top">
-                        {{::ctrl.translations.buttonsRemove}}
+                        {{::ctrl.translations.question.buttonsRemove}}
                     </md-tooltip>
                     <i class="fa fa-times"></i>
                 </md-button>
@@ -40,7 +40,7 @@
             <div class="drag-handle"></div>
             <md-input-container>
                 <span ng-click="ctrl.addNewItem()" role="button">
-                    <input type="text" required class="form-control" value="{{::ctrl.translations.clickToAddItem}}">
+                    <input type="text" required class="form-control" value="{{::ctrl.translations.question.clickToAddItem}}">
                 </span>
             </md-input-container>
         </div>
