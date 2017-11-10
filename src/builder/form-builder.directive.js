@@ -121,26 +121,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', function ($rootScope)
                 updateQuestionNumbers();
             };
 
-            ctrl.moveDownPage = function(page){
-                var fromIndex = ctrl.formData.pages.indexOf(page);
-                var toIndex=fromIndex+1;
-                if(toIndex<ctrl.formData.pages.length){
-                    arrayMove(ctrl.formData.pages, fromIndex, toIndex);
-                }
-                updatePageNumbers();
-                updateQuestionNumbers();
-            };
-
-            ctrl.moveUpPage = function(page){
-                var fromIndex = ctrl.formData.pages.indexOf(page);
-                var toIndex=fromIndex-1;
-                if(toIndex>=0){
-                    arrayMove(ctrl.formData.pages, fromIndex, toIndex);
-                }
-                updatePageNumbers();
-                updateQuestionNumbers();
-            };
-
             ctrl.removePage = function(page){
                 var index = ctrl.formData.pages.indexOf(page);
                 ctrl.formData.pages.splice(index,1);

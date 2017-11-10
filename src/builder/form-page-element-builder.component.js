@@ -13,7 +13,6 @@ angular.module('mwFormBuilder').directive('mwFormPageElementBuilder', function (
             isLast: '=',
             onReady: '&',
             possiblePageFlow: '<',
-            onEdit: '&',
             onClone: '&',
             onMoveUp: '&',
             onMoveDown: '&',

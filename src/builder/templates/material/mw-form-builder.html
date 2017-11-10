@@ -18,8 +18,15 @@
 
 
         <div class="form-page-list">
-            <mw-form-page-builder ng-repeat="page in ctrl.formData.pages| mwStartFrom:ctrl.currentPage | limitTo:1" form-page="page" form-object="ctrl.formData"
-                                  is-first="$first" is-last="$last" possible-page-flow="ctrl.possiblePageFlow"></mw-form-page-builder>
+            <mw-form-page-builder 
+                ng-repeat="page in ctrl.formData.pages| mwStartFrom:ctrl.currentPage | limitTo:1" 
+                form-page="page" form-object="ctrl.formData"
+                is-first="$first" 
+                is-last="$last" 
+                possible-page-flow="ctrl.possiblePageFlow"
+                on-remove-page="ctrl.removePage(currentPage)" 
+                on-add-page="ctrl.addPage(currentPage)">
+            </mw-form-page-builder>
         </div>
         <div layout="row" layout-align="center center">
             <div flex-gt-xs="75">

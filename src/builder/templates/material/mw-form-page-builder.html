@@ -58,6 +58,7 @@
                 is-first="$first" 
                 is-last="$last" 
                 possible-page-flow="ctrl.possiblePageFlow"
+                on-image-selection="ctrl.onImageSelection"
                 on-remove="ctrl.removeElement(elementPicked)"
                 on-clone="ctrl.cloneElement(elementPicked)"
                 on-move-up="ctrl.moveUpElement(elementPicked)"
@@ -66,7 +67,7 @@
         </div>
 
         <md-menu>
-            <md-button class="md-raised" aria-label="{{::ctrl.translations.addElement}}"    ng-click="$mdOpenMenu($event)">
+            <md-button class="md-raised" aria-label="{{::ctrl.translations.addElement}}"    ng-click="$mdMenu.open($event)">
                 {{::ctrl.translations.addElement}}
             </md-button>
             <md-menu-content width="4">

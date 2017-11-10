@@ -8,7 +8,7 @@ angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
         }
     })
 
-    .directive('mwFormImageBuilder', function () {
+    .directive('mwFormImageBuilder', function ($q) {
 
     return {
         replace: true,
@@ -42,13 +42,26 @@ angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
             };
 
             ctrl.selectImageButtonClicked = function(){
-                var resultPromise = ctrl.onImageSelection();
+                var resultPromise = onImageSelection();
                 resultPromise.then(function(imageSrc){
                    ctrl.image.src = imageSrc;
 
                 }).catch(function(){
 
                 });
+            };
+
+            function onImageSelection() {
+
+                var d = $q.defer();
+                var src = prompt("Please enter image src");
+                if (src != null) {
+                    d.resolve(src);
+                } else {
+                    d.reject();
+                }
+
+                return d.promise;
             };
 
             ctrl.setAlign = function(align){
