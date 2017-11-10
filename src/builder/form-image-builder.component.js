@@ -1,6 +1,7 @@
 
-angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
-    var id = 0;
+angular.module('mwFormBuilder')
+    .factory("FormImageBuilderId", function(){
+        var id = 0;
         return {
             next: function(){
                 return ++id;
@@ -8,13 +9,8 @@ angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
         }
     })
 
-    .directive('mwFormImageBuilder', function ($q) {
-
-    return {
-        replace: true,
-        restrict: 'AE',
-        require: '^mwFormPageElementBuilder',
-        scope: {
+    .component('mwFormImageBuilder', {
+        bindings: {
             image: '=',
             formObject: '=',
             onReady: '&',
@@ -23,8 +19,7 @@ angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
         },
         templateUrl: 'mw-form-image-builder.html',
         controllerAs: 'ctrl',
-        bindToController: true,
-        controller: function($timeout,FormImageBuilderId, mwFormUuid){
+        controller: function ($timeout, FormImageBuilderId, mwFormUuid, $q){
             var ctrl = this;
             ctrl.id = FormImageBuilderId.next();
             ctrl.formSubmitted=false;
@@ -67,11 +62,5 @@ angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
             ctrl.setAlign = function(align){
                 ctrl.image.align = align;
             }
-
-
-        },
-        link: function (scope, ele, attrs, formPageElementBuilder){
-            var ctrl = scope.ctrl;
         }
-    };
-});
+    });

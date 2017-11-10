@@ -177,6 +177,5 @@ angular.module('mwFormBuilder').component('mwFormPageBuilder', {
             }
         });
 
-        //ctrl.onImageSelection = formBuilderCtrl.onImageSelection;
     }
 });

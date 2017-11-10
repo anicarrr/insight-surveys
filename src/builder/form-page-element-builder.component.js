@@ -105,7 +105,6 @@ angular.module('mwFormBuilder').directive('mwFormPageElementBuilder', function (
                 $scope.$emit('mwForm.questionUpdate');
             };
 
-            //ctrl.onImageSelection = pageBuilderCtrl.onImageSelection;
         }
     }
 });
