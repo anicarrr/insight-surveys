@@ -1,21 +1,16 @@
 <div class="mw-form-builder">
     <form name="ctrl.form" role="form" novalidate>
         <div class="mw-title-page">
-
-
             <md-input-container class="md-block">
                 <mw-label label-for="formName" label-value="ctrl.translations.formName"></mw-label>
                 <input type="text" class="form-control" name="formName" id="formName" ng-model="ctrl.formData.name" required>
             </md-input-container>
 
-
             <md-input-container class="md-block">
                 <mw-label label-for="formDescription" label-value="ctrl.translations.description"></mw-label>
                 <textarea msd-elastic class="form-control" name="formDescription" ng-model="ctrl.formData.description" id="formDescription"/>
             </md-input-container>
-
         </div>
-
 
         <div class="form-page-list">
             <mw-form-page-builder 
@@ -28,6 +23,7 @@
                 on-add-page="ctrl.addPage(currentPage)">
             </mw-form-page-builder>
         </div>
+
         <div layout="row" layout-align="center center">
             <div flex-gt-xs="75">
                 <div layout="row" layout-align="center center">
@@ -50,17 +46,15 @@
 
             </div>
             <div flex>
-                   
                 <div layout="row" layout-align="end">
-                        <md-button type="button" class="md-raised md-primary" ng-click="ctrl.addPage()">
-                            <i class="fa fa-plus"></i>
-                            <span>{{::ctrl.translations.addPage}}</span>                            
-                        </md-button>
-                    </div>
+                    <md-button type="button" class="md-raised md-primary" ng-click="ctrl.addPage()">
+                        <i class="fa fa-plus"></i>
+                        <span>{{::ctrl.translations.addPage}}</span>                            
+                    </md-button>
+                </div>
             </div>
         </div>
         
         <mw-form-confirmation-page-builder form-object="ctrl.formData"></mw-form-confirmation-page-builder>
     </form>
-
 </div>
