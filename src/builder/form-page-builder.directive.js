@@ -9,7 +9,8 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
             formPage: '=',
             formObject: '=',
             isFirst: '=',
-            isLast: '='            
+            isLast: '=',
+            possiblePageFlow: '<'            
         },
         templateUrl: 'mw-form-page-builder.html',
         controllerAs: 'ctrl',
@@ -134,11 +135,11 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
                 ctrl.addElement('image');
             };
 
-            ctrl.addParagraph= function(){
+            ctrl.addParagraph = function(){
                 ctrl.addElement('paragraph');
             };
 
-            ctrl.isElementActive= function(element){
+            ctrl.isElementActive = function(element){
                 return ctrl.activeElement == element;
             };
 
@@ -165,15 +166,6 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
                 arr.splice(fromIndex, 1);
                 arr.splice(toIndex, 0, element);
             }
-
-            ctrl.hoverIn = function(){
-                ctrl.hoverEdit = true;
-            };
-
-            ctrl.hoverOut = function(){
-                ctrl.hoverEdit = false;
-            };
-
 
             ctrl.updateElementsOrderNo = updateElementsOrderNo;
 
