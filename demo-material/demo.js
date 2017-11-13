@@ -34,7 +34,6 @@ angular.module('app', ['ngMaterial', 'mwFormBuilder', 'mwFormViewer', 'mwFormUti
             pageSize: 1      
                  */
         };
-        ctrl.formStatus= {};
         ctrl.responseData={};
         $http.get('response-data.json')
             .then(function(res){
@@ -55,19 +54,6 @@ angular.module('app', ['ngMaterial', 'mwFormBuilder', 'mwFormViewer', 'mwFormUti
             }else{
                 d.reject();
             }
-            return d.promise;
-        };
-
-        ctrl.onImageSelection = function (){
-
-            var d = $q.defer();
-            var src = prompt("Please enter image src");
-            if(src !=null){
-                d.resolve(src);
-            }else{
-                d.reject();
-            }
-
             return d.promise;
         };
 
